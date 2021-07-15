@@ -1,45 +1,60 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Norfolk Snowsports Club (NSC) Volunteer Hours website
 
-Welcome USER_NAME,
+## Python and Data Centric Development Milestone Project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+---
 
-## Gitpod Reminders
+This site has been created to reduce the amount of admin work at Norfolk Snowsports Club and allow instructors a place where they can see their current expenses due and hours volunteered.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
 
-`python3 -m http.server`
+---
 
-A blue button should appear to click: *Make Public*,
+### Project goals
 
-Another blue button should appear to click: *Open Browser*.
+The primary goal of the NSC Volunteer Hours website is to reduce the amount of admin work needed when volunteer instructors submit their hours at Norfolk Snowsports Club, NSC. Currently instructors complete a lesson, write their hours in a daily log then this in manually input onto an access database and an excel sheet. The expenses are then caluclated, printed and sent to accounts for accounts to type the information into their excel sheets. This site will allow instructors to enter their details and there expenses will automatically be calculated saving hundreds of hours a year in admin time.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The secondary goal is to provide instructors a place where they can easily see their recent hours worked, their expenses due and their freetime accrued. Typically instructors can only see this information once every three months when their expenses statements are print but this site will allow them live view of all their record hours at any one time.
 
-A blue button should appear to click: *Make Public*,
+### User goals
 
-Another blue button should appear to click: *Open Browser*.
+#### User goals:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The users will be volunteer ski and snowboard instructors and coaches.
 
-## Updates Since The Instructional Video
+* Users can add the lessons they have completed.
+* Users can see the lessons they have added.
+* Users can update and delete the lessons they have added.
+* Users can see a running total of the hours they have voluntered and their expenses due.
+* Users can Search for lesson by their type/category.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Site Admins Goals:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The site admin will be NSC employees.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Admin can view, edit and delete any and all lessons input by instructors.
+* Admin can add new records of lessons on an instructors behalf.
+* Admin can new lesson types/categories.
+* Admin can edit the contents of the home/launch page.
+* Admin can view, edit and delete users.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### User Stories
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### As an instructor I would like to:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Easily add lessons I have created to the NSC Volunteer Hours Site.
+* View all my lessons volunteered.
+* Edit and delete any records I have incorrectly added.
+* See an overview of the hours I have volunteered and the expenses due.
+* Manage my account information.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### As an Admin User I would like to:
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+* View all submitted hours.
+* Edit and delete any records that are incorrect.
+* See an overview of all hours and expenses.
+* Easily search for a user or a lesson type/category.
+* Edit and delete user information.
+* Update the home/landing page.
+* Add, Edit and Delete new lesson types/categories.
+* Input lesson information on an instructors behalf.
