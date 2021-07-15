@@ -6,6 +6,42 @@
 
 This site has been created to reduce the amount of admin work at Norfolk Snowsports Club and allow instructors a place where they can see their current expenses due and hours volunteered.
 
+---
+---
+
+## Table of contents
+
+---
+
+- [UX](#ux)
+    - [Project Goals](#project-goals)
+    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
+    - [Wireframes](#wireframes)
+    - [Surface](#surface)
+- [Features](#features)
+    - [Navigation Bar](#navigation-bar)
+    - [Home Page](#home-page)
+    - [Future Features](#future-features)
+- [Technologies used](#technologies-used)
+- [Testing](#testing)
+    - [Functionality Testing](#functionality-testing)
+    - [Compatibility Testing](#compatibility-testing)
+    - [User Story Testing](#user-story-testing)
+    - [Issues and bugs](#issues-and-bugs)
+    - [Performance Testing](#performance-testing)
+    - [Code Validation](#code-validation)
+- [Deployment](#deployment)
+- [Credits](#credits)
+    - [Learning resources and styling ideas](#learning-resources-and-styling-ideas)
+    - [Code](#code)
+    - [Images Used](#images-used)
+- [Other Information](#other-information)
+- [Project Screenshots](#project-screenshots)
+
+---
+---
+
 ## UX
 
 ---
@@ -58,3 +94,162 @@ The site admin will be NSC employees.
 * Update the home/landing page.
 * Add, Edit and Delete new lesson types/categories.
 * Input lesson information on an instructors behalf.
+
+### Wireframes
+
+### Surface
+
+#### Colours
+
+Main colours used in project:
+
+* Primary colour one - HEX: #202945, RGB: R: 32 G: 41 B: 69
+* Primary colour two - HEX: #ce0e2d, RGB: R: 206 G: 14 B: 45
+* Secondary colour one - HEX: #fff, RGB: R: 255 G: 255 B: 255
+* Secondary colour two - HEX: #cbd514, RGB: R: 203 G: 213 B: 20
+* Secondary colour three - HEX: #e0592a, RGB: R: 224 G: 89 B: 42
+
+#### Fonts
+
+* Primary font - Termina
+* Secondary font - Ubuntu Light
+* Back-up font - sans-serif
+
+#### Images
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Features
+
+---
+
+### Navigation bar
+
+### Home page
+
+### Future Features
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Technologies used
+
+---
+
+#### HTML5
+
+* Used as a structural language.
+
+#### CSS
+
+* Used as a style language.
+
+#### JavaScript
+
+* Used JavaScript as a scripting language.
+
+#### Python
+
+* Used Python as a programming language.
+
+#### Font Awesome
+
+* [Font Awesome](https://fontawesome.com/) was used for social links, skiing and snowboarding headings and for table headings.
+
+#### Google Fonts
+
+* [Google Fonts](https://fonts.google.com/) used as a font resource.
+
+#### GitHub
+
+* [GitHub](https://github.com/) was used as the site's repository.
+
+#### Gitpod
+
+* [Gitpod](https://gitpod.io/workspaces/) was used as a development hosting platform.
+
+#### Wireframes
+
+* [Balsamiq.com](https://balsamiq.com/) was used as a wireframe tool to sketch the structure of the site.
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Testing
+
+---
+
+### Functionality Testing
+
+### Compatibility Testing
+
+### User Story Testing
+
+### Issues and bugs
+
+### Performance Testing
+
+### Code Validation
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Deployment
+
+---
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Credits
+
+---
+
+To complete this project I used Code Institute student template: [gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+### Learning resources and styling ideas
+
+Throughout learning with code institute I have researched and learnt using the following sites and courses:
+
+* [Code Institute](https://learn.codeinstitute.net/login?next=/dashboard)
+    * Throughout this project I have referred back to lots of different modules to refresh myself on good practices.
+* [W3Schools](https://www.w3schools.com/)
+    * I have used this site throughout the course when looking for ideas or potential stylings to code.
+
+### Code
+
+### Images Used
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Other information
+
+---
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Project Screenshots
+
+---
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
