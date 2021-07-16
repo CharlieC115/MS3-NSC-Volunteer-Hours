@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h3 class="center-align">Add Activity</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('new_activity') }}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix"></i>
+                    <input id="activity_name" name="activity_name" minlength="3" maxlength="50" type="text" class="validate" required>
+                    <label for="activity_name">Activity Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn">
+                        Add Activity <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

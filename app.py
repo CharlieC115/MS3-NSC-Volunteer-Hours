@@ -176,6 +176,19 @@ def manage_activities():
     return render_template('manage_activities.html', activities=activities)
 
 
+@app.route('/new_activity', methods=['GET', 'POST'])
+def new_activity():
+    if request.method == 'POST':
+        activities = {
+            'activity_name': request.form.get('activity_name')
+        }
+        mongo.db.activities.insert_one(activities)
+        flash('New Activity Added')
+        return redirect(url_for('manage_activities'))
+
+    return render_template('new_activity.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
