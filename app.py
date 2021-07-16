@@ -109,18 +109,25 @@ def lessons():
 @app.route('/new_record', methods=['GET', 'POST'])
 def new_record():
     if request.method == 'POST':
-        mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
-        expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+        lesson_hours = request.form.get('lesson_hours')
+        lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
+        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+
+        if float(lesson_hours) < 1.5:
+            expense_due = 7.2
+        else:
+            expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
         record = {
             'lesson_date': request.form.get('lesson_date'),
             'lesson_start': request.form.get('lesson_start'),
             'lesson_finish': request.form.get('lesson_finish'),
-            'lesson_hours': request.form.get('lesson_hours'),
+            'lesson_hours': lesson_hours,
             'lesson_type': request.form.get('activity_name'),
-            'lesson_mileage': mileage,
-            'lesson_expenses': expenses,
-            'entry_by': session['user']
+            'lesson_mileage': lesson_mileage,
+            'lesson_expenses': lesson_expenses,
+            'entry_by': session['user'],
+            'expense_due': expense_due
         }
 
         mongo.db.lessons.insert_one(record)
@@ -131,28 +138,28 @@ def new_record():
     return render_template('new_record.html', activities=activities)
 
 
-@app.route('/search', methods=['GET', 'POST'])
-def search():
-    query = request.form.get('query')
-    lessons = list(mongo.db.lessons.find({'$text': {'$search': query}}).sort('datetime_millisec', 1))
-    return render_template('lessons.html', lessons=lessons)
-
-
 @app.route('/edit_record/<lesson_id>', methods=['GET', 'POST'])
 def edit_record(lesson_id):
     if request.method == 'POST':
-        mileage = 'Yes' if request.form.get('mileage') else 'No'
-        expenses = 'Yes' if request.form.get('expenses') else 'No'
+        lesson_hours = request.form.get('lesson_hours')
+        lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
+        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+
+        if float(lesson_hours) < 1.5:
+            expense_due = 7.2
+        else:
+            expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
         record = {
             'lesson_date': request.form.get('lesson_date'),
             'lesson_start': request.form.get('lesson_start'),
             'lesson_finish': request.form.get('lesson_finish'),
-            'lesson_hours': request.form.get('lesson_hours'),
+            'lesson_hours': lesson_hours,
             'lesson_type': request.form.get('activity_name'),
-            'lesson_mileage': mileage,
-            'lesson_expenses': expenses,
-            'entry_by': session['user']
+            'lesson_mileage': lesson_mileage,
+            'lesson_expenses': lesson_expenses,
+            'entry_by': session['user'],
+            'expense_due': expense_due
         }
 
         mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
