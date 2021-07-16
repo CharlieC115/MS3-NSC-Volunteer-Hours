@@ -22,7 +22,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                        <li><a href="#">My Lessons</a></li>
+                        <li><a href="{{ url_for('lessons') }}">My Lessons</a></li>
                         <li><a href="#">New Record</a></li>
                         <li><a href="#">Manage Lessons</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -39,7 +39,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                <li><a href="#">My Lessons</a></li>
+                <li><a href="{{ url_for('lessons') }}">My Lessons</a></li>
                 <li><a href="#">New Record</a></li>
                 <li><a href="#">Manage Lessons</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>

@@ -100,6 +100,19 @@ def logout():
     return redirect(url_for('login'))
 
 
+@app.route('/lessons')
+def lessons():
+    lessons = mongo.db.lessons.find()
+    return render_template('lessons.html', lessons=lessons)
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form.get('query')
+    lessons = list(mongo.db.lessons.find({'$text': {'$search': query}}).sort('datetime_millisec', 1))
+    return render_template('lessons.html', lessons=lessons)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
