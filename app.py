@@ -23,6 +23,11 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/profile')
+def profile():
+    users = mongo.db.users.find()
+    return render_template('profile.html', users=users)
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

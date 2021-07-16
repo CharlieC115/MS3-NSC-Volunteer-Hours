@@ -16,11 +16,11 @@
         <!-- top navbar -->
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">NSC Instructor Hours</a>
+                <a href="{{ url_for('home') }}" class="brand-logo">NSC Instructor Hours</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class=""></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="#">My Lessons</a></li>
                     <li><a href="#">New Record</a></li>
                     <li><a href="#">Manage Lessons</a></li>
@@ -33,8 +33,8 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4>NSC Instructor Hours</h4></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="#">My Lessons</a></li>
             <li><a href="#">New Record</a></li>
             <li><a href="#">Manage Lessons</a></li>
