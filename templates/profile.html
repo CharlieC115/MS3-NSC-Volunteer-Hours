@@ -4,6 +4,7 @@
     <div class="row">
         <form class="col s12">
             {% for user in users %}
+            <!-- username -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user prefix"></i>
@@ -11,6 +12,7 @@
                     <label for="username">username</label>
                 </div>
             </div>
+            <!-- name -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-user-tag prefix"></i>
@@ -23,6 +25,7 @@
                     <label for="last_name">Last Name</label>
                 </div>
             </div>
+            <!-- email address -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-at prefix"></i>
@@ -30,29 +33,27 @@
                     <label for="email_address">Email Address</label>
                 </div>
             </div>
+            <!-- address line 1 and 2 -->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="fas fa-map-marker-alt prefix"></i>
                     <input value="{{ user.address_line_1 }}" id="address_line_1" name="address_line_1" type="text" class="validate">
                     <label for="address_line_1">Address Line 1</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="fas fa-map-marker-alt prefix"></i>
                     <input value="{{ user.address_line_2 }}" id="address_line_2" name="address_line_2" type="text" class="validate">
                     <label for="address_line_2">Address Line 2</label>
                 </div>
             </div>
+            <!-- address city and post code -->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="fas fa-map-marker-alt prefix"></i>
                     <input value="{{ user.address_city }}" id="address_city" name="address_city" type="text" class="validate">
                     <label for="address_city">Home City</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="fas fa-map-marker-alt prefix"></i>
                     <input value="{{ user.address_post_code }}" id="address_post_code" name="address_post_code" type="text" class="validate">
                     <label for="address_post_code">Home Post Code</label>
