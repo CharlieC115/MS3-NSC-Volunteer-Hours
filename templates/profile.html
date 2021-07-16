@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
+    {% for user in users %}
+    {% if session.user|lower == user.username|lower %}
+    <h3 class="center-align">{{ user.username }}'s Profile</h3>
+
     <div class="row">
-        <form class="col s12">
-            {% for user in users %}
+        <form class="col s12 m8 offset-m2">
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12">
@@ -59,8 +62,9 @@
                     <label for="address_post_code">Home Post Code</label>
                 </div>
             </div>
-            {% endfor %}
         </form>
     </div>
+    {% endif %}
+    {% endfor %}
 
 {% endblock %}
