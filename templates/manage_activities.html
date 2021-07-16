@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h3 class="center-align">Manage Lessons</h3>
+
+    <div class="row">
+        {% for activity in activities %}
+            <div class="col s12 m3">
+                <div class="center-align">
+                    <div>
+                        <span>{{ activity.activity_name }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

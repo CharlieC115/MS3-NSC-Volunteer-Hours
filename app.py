@@ -170,6 +170,12 @@ def delete_record(lesson_id):
     return redirect(url_for('lessons'))
 
 
+@app.route('/manage_activities')
+def manage_activities():
+    activities = list(mongo.db.activities.find().sort('activity_name', 1))
+    return render_template('manage_activities.html', activities=activities)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
