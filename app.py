@@ -106,6 +106,30 @@ def lessons():
     return render_template('lessons.html', lessons=lessons)
 
 
+@app.route('/new_record', methods=['GET', 'POST'])
+def new_record():
+    if request.method == 'POST':
+        mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
+        expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+
+        record = {
+            'lesson_date': request.form.get('lesson_date'),
+            'lesson_start': request.form.get('lesson_start'),
+            'lesson_finish': request.form.get('lesson_finish'),
+            'lesson_hours': request.form.get('lesson_hours'),
+            'lesson_type': request.form.get('activity_name'),
+            'lesson_mileage': mileage,
+            'lesson_expenses': expenses
+        }
+
+        mongo.db.lessons.insert_one(record)
+        flash('Record successfully Added')
+        return redirect(url_for('lessons'))
+
+    activities = mongo.db.activities.find().sort('lesson_type', 1)
+    return render_template('new_record.html', activities=activities)
+
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.form.get('query')
