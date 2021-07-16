@@ -18,6 +18,9 @@
                     <div>
                         <span>{{ activity.activity_name }}</span>
                     </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('edit_activities', activity_id=activity._id) }}" class="btn">Edit</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}

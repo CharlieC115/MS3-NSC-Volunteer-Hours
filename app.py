@@ -189,6 +189,20 @@ def new_activity():
     return render_template('new_activity.html')
 
 
+@app.route('/edit_activities/<activity_id>', methods=['GET', 'POST'])
+def edit_activities(activity_id):
+    if request.method == 'POST':
+        activities = {
+            'activity_name': request.form.get('activity_name')
+        }
+        mongo.db.activities.update({'_id': ObjectId(activity_id)}, activities)
+        flash('Activity Successfully Updated')
+        return redirect(url_for('manage_activities'))
+
+    activity = mongo.db.activities.find_one({'_id': ObjectId(activity_id)})
+    return render_template('edit_activities.html', activity=activity)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
