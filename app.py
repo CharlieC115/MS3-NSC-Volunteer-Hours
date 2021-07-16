@@ -189,8 +189,8 @@ def new_activity():
     return render_template('new_activity.html')
 
 
-@app.route('/edit_activities/<activity_id>', methods=['GET', 'POST'])
-def edit_activities(activity_id):
+@app.route('/edit_activity/<activity_id>', methods=['GET', 'POST'])
+def edit_activity(activity_id):
     if request.method == 'POST':
         activities = {
             'activity_name': request.form.get('activity_name')
@@ -200,7 +200,14 @@ def edit_activities(activity_id):
         return redirect(url_for('manage_activities'))
 
     activity = mongo.db.activities.find_one({'_id': ObjectId(activity_id)})
-    return render_template('edit_activities.html', activity=activity)
+    return render_template('edit_activity.html', activity=activity)
+
+
+@app.route('/delete_activity/<activity_id>')
+def delete_activity(activity_id):
+    mongo.db.activities.remove({'_id': ObjectId(activity_id)})
+    flash('Activity Successfully Deleted')
+    return redirect(url_for('manage_activities'))
 
 
 if __name__ == '__main__':
