@@ -20,13 +20,16 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class=""></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                    <li><a href="#">My Lessons</a></li>
-                    <li><a href="#">New Record</a></li>
-                    <li><a href="#">Manage Lessons</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li><a href="#">My Lessons</a></li>
+                        <li><a href="#">New Record</a></li>
+                        <li><a href="#">Manage Lessons</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -34,15 +37,31 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h4>NSC Instructor Hours</h4></li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('profile') }}">Profile</a></li>
-            <li><a href="#">My Lessons</a></li>
-            <li><a href="#">New Record</a></li>
-            <li><a href="#">Manage Lessons</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="#">My Lessons</a></li>
+                <li><a href="#">New Record</a></li>
+                <li><a href="#">Manage Lessons</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
+
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
     <main>
         {% block content %}

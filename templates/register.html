@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-plus prefix"></i>
-                        <input id="username" name="username" type="text" minlength="8" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Must contain at least one number, one uppercase and one lowercase letter, and at least 8 or more characters" class="validate" required>
+                        <input id="username" name="username" type="text" minlength="8" maxlength="20" pattern="[a-zA-Z0-9]{8,20}" title="Must contain 8 to 20 characters. Not case sensitive." class="validate" required>
                         <label for="username">Username</label>
                     </div>
                 </div>

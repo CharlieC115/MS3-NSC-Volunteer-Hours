@@ -29,6 +29,7 @@ def profile():
     users = mongo.db.users.find()
     return render_template('profile.html', users=users)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -89,6 +90,14 @@ def login():
             return redirect(url_for('login'))
 
     return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    # remove user from session cookies
+    flash('You have been logged out')
+    session.pop('user')
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':

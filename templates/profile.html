@@ -3,7 +3,7 @@
 
     {% for user in users %}
     {% if session.user|lower == user.username|lower %}
-    <h3 class="center-align">{{ user.username }}'s Profile</h3>
+    <h3 class="center-align">{{ user.username|capitalize }}'s Profile</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2">
