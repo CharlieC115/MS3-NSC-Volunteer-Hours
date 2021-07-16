@@ -126,7 +126,7 @@ def new_record():
         flash('Record successfully Added')
         return redirect(url_for('lessons'))
 
-    activities = mongo.db.activities.find().sort('lesson_type', 1)
+    activities = mongo.db.activities.find().sort('activity_name', 1)
     return render_template('new_record.html', activities=activities)
 
 
@@ -135,6 +135,30 @@ def search():
     query = request.form.get('query')
     lessons = list(mongo.db.lessons.find({'$text': {'$search': query}}).sort('datetime_millisec', 1))
     return render_template('lessons.html', lessons=lessons)
+
+
+@app.route('/edit_record/<lesson_id>', methods=['GET', 'POST'])
+def edit_record(lesson_id):
+    if request.method == 'POST':
+        mileage = 'Yes' if request.form.get('mileage') else 'No'
+        expenses = 'Yes' if request.form.get('expenses') else 'No'
+
+        record = {
+            'lesson_date': request.form.get('lesson_date'),
+            'lesson_start': request.form.get('lesson_start'),
+            'lesson_finish': request.form.get('lesson_finish'),
+            'lesson_hours': request.form.get('lesson_hours'),
+            'lesson_type': request.form.get('activity_name'),
+            'lesson_mileage': mileage,
+            'lesson_expenses': expenses
+        }
+
+        mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
+        flash('Record successfully Updated')
+
+    lesson = mongo.db.lessons.find_one({'_id': ObjectId(lesson_id)})
+    activities = mongo.db.activities.find().sort('activity_name', 1)
+    return render_template('edit_record.html', lesson=lesson, activities=activities)
 
 
 if __name__ == '__main__':
