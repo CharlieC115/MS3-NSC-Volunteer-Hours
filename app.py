@@ -161,6 +161,13 @@ def edit_record(lesson_id):
     return render_template('edit_record.html', lesson=lesson, activities=activities)
 
 
+@app.route('/delete_record/<lesson_id>')
+def delete_record(lesson_id):
+    mongo.db.lessons.remove({'_id': ObjectId(lesson_id)})
+    flash('Record Successfully Deleted')
+    return redirect(url_for('lessons'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

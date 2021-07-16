@@ -14,6 +14,7 @@
                 <th>Mileage?</th>
                 <th>Claim Expenses?</th>
                 <th>Edit?</th>
+                <th>Delete?</th>
             </tr>
         </thead>
         
@@ -28,6 +29,7 @@
                     <td>{{ lesson.lesson_mileage }}</td>
                     <td>{{ lesson.lesson_expenses }}</td>
                     <td><a href="{{ url_for('edit_record', lesson_id=lesson._id) }}" class="btn">Edit</a></td>
+                    <td><a href="{{ url_for('delete_record', lesson_id=lesson._id) }}" class="btn">Delete</a></td>
                 </tr>
             {% endfor %}
         </tbody> 
