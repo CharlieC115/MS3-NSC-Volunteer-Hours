@@ -119,7 +119,8 @@ def new_record():
             'lesson_hours': request.form.get('lesson_hours'),
             'lesson_type': request.form.get('activity_name'),
             'lesson_mileage': mileage,
-            'lesson_expenses': expenses
+            'lesson_expenses': expenses,
+            'entry_by': session['user']
         }
 
         mongo.db.lessons.insert_one(record)
@@ -150,7 +151,8 @@ def edit_record(lesson_id):
             'lesson_hours': request.form.get('lesson_hours'),
             'lesson_type': request.form.get('activity_name'),
             'lesson_mileage': mileage,
-            'lesson_expenses': expenses
+            'lesson_expenses': expenses,
+            'entry_by': session['user']
         }
 
         mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
