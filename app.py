@@ -3,6 +3,7 @@ from flask import Flask, render_template, flash, redirect, request, session, url
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists('env.py'):
     import env
 
@@ -102,7 +103,7 @@ def logout():
 
 @app.route('/lessons')
 def lessons():
-    lessons = mongo.db.lessons.find()
+    lessons = mongo.db.lessons.find().sort('datetime_millisec', 1)
     return render_template('lessons.html', lessons=lessons)
 
 
@@ -118,6 +119,13 @@ def new_record():
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
+        date = request.form.get('lesson_date')
+        start_time = request.form.get('lesson_start')
+        full_date_time = date + ' ' + start_time
+
+        dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
+        millisec = dateti.timestamp()
+
         record = {
             'lesson_date': request.form.get('lesson_date'),
             'lesson_start': request.form.get('lesson_start'),
@@ -127,7 +135,8 @@ def new_record():
             'lesson_mileage': lesson_mileage,
             'lesson_expenses': lesson_expenses,
             'entry_by': session['user'],
-            'expense_due': expense_due
+            'expense_due': expense_due,
+            'datetime_millisec': millisec
         }
 
         mongo.db.lessons.insert_one(record)
@@ -150,6 +159,13 @@ def edit_record(lesson_id):
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
+        date = request.form.get('lesson_date')
+        start_time = request.form.get('lesson_start')
+        full_date_time = date + ' ' + start_time
+
+        dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
+        millisec = dateti.timestamp()
+
         record = {
             'lesson_date': request.form.get('lesson_date'),
             'lesson_start': request.form.get('lesson_start'),
@@ -159,7 +175,8 @@ def edit_record(lesson_id):
             'lesson_mileage': lesson_mileage,
             'lesson_expenses': lesson_expenses,
             'entry_by': session['user'],
-            'expense_due': expense_due
+            'expense_due': expense_due,
+            'datetime_millisec': millisec
         }
 
         mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
