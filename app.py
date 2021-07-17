@@ -31,6 +31,12 @@ def profile():
     return render_template('profile.html', users=users)
 
 
+@app.route('/edit_profile/<user_id>', methods=['GET', 'POST'])
+def edit_profile(user_id):
+    users = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    return render_template('edit_profile.html', users=users)
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':

@@ -59,6 +59,11 @@
                     <label for="address_post_code">Home Post Code</label>
                 </div>
             </div>
+            <div class="row">
+                <div class="col s12">
+                    <a href="{{ url_for('edit_profile', user_id=user._id)}}" class="btn">Edit</a>
+                </div>
+            </div>
         </form>
     </div>
     {% endif %}
