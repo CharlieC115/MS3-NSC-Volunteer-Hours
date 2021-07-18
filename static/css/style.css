@@ -1,0 +1,36 @@
+nav {
+    background-color: #CE0E2D;
+}
+
+.home {
+    background-color: #202945;
+}
+
+h1, h2, h3 {
+    color: #FFF;
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 14px;
+    color: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.sidenav h3, .sidenav li a {
+    color: #202945;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
