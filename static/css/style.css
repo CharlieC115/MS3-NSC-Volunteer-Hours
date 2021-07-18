@@ -1,3 +1,43 @@
+.row {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #FFF;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+h1 {
+    font-size: 48px;
+    padding: 48px;
+}
+
+h2 {
+    font-size: 36px;
+    padding: 36px;
+}
+
+h3 {
+    font-size: 24px;
+    padding: 24px;
+}
+
+p {
+    font-size: 14px;
+    color: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 14px;
+    letter-spacing: 2px;
+}
+
+br {
+    padding: 30px;
+}
+
 nav {
     background-color: #CE0E2D;
 }
@@ -6,27 +46,8 @@ nav {
     background-color: #202945;
 }
 
-h1, h2, h3 {
-    color: #FFF;
-    font-family: 'Work Sans', sans-serif;
-}
-
-h1 {
-    font-size: 48px;
-}
-
-h2 {
-    font-size: 36px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-p {
-    font-size: 14px;
-    color: #FFF;
-    font-family: 'Ubuntu', sans-serif;
+.contact-us {
+    background-color: #CE0E2D;
 }
 
 .sidenav h3, .sidenav li a {
