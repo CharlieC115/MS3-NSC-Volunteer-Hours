@@ -25,7 +25,7 @@
         <!-- top navbar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo left"><img src="https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png" alt="" height="100" width="100"></a>
+                <a href="{{ url_for('home') }}" class="brand-logo left"><img src="https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png" alt=""></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -67,7 +67,9 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
+                        <div class="col s8 offset-s2">
                         <h4 class="center-align">{{ message }}</h4>
+                    </div>
                     </div>
                 {% endfor %}
             {% endif %}
