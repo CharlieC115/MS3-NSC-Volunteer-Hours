@@ -2,6 +2,16 @@
     margin: 0;
 }
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 h1, h2, h3 {
     color: #FFF;
     font-family: 'Work Sans', sans-serif;
@@ -47,11 +57,15 @@ nav {
 }
 
 .contact-us {
-    background-color: #CE0E2D;
+    background-color: #cbd514;
 }
 
 .sidenav h3, .sidenav li a {
     color: #202945;
     font-family: 'Work Sans', sans-serif;
     font-weight: 700;
+}
+
+.footer {
+    background-color: #CE0E2D;
 }
