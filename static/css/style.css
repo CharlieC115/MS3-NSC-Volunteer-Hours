@@ -1,3 +1,5 @@
+/* sizing and display */
+
 .row {
     margin: 0;
 }
@@ -11,6 +13,18 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+section {
+    padding: 30px 0;
+}
+
+/* flash messages */
+
+.flash-msg {
+    background-color: #202945;
+}
+
+/* headings and paragraphs */
 
 h1, h2, h3 {
     color: #FFF;
@@ -44,20 +58,10 @@ p {
     letter-spacing: 2px;
 }
 
-br {
-    padding: 30px;
-}
+/* navabar and footer */
 
 nav {
     background-color: #CE0E2D;
-}
-
-.home {
-    background-color: #202945;
-}
-
-.contact-us {
-    background-color: #cbd514;
 }
 
 .sidenav h3, .sidenav li a {
@@ -66,6 +70,81 @@ nav {
     font-weight: 700;
 }
 
+.brand-logo img {
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 10px solid #FFF;
+    margin: 10px;
+}
+
 .footer {
     background-color: #CE0E2D;
+}
+
+/* home.html */
+
+.home {
+    background-color: #202945;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.contact-us {
+    background-color: #cbd514;
+}
+
+.pur-icon {
+    color: #202945;
+}
+
+.input-field label {
+    color: #202945;
+}
+
+textarea {
+    border-color: #202945;
+}
+
+.submit-btn button {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin: 20px;
+    border: 0;
+    line-height: 0;
+}
+
+.submit-btn button:hover {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin: 20px;
+    border: 0;
+    line-height: 0;
+    transform: scale(1.3);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.submit-btn button:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }

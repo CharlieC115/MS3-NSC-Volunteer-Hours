@@ -1,48 +1,59 @@
 {% extends 'base.html' %}
 {% block content %}
     <section class="home">
-        <div class="row">
-            <div class="col s12">
-                <h1>Norfolk Snowsports Club</h1>
-                <h2>Volunteer Hours</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h1>Norfolk Snowsports Club</h1>
+                    <h2>Volunteer Hours</h2>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s10 offset-s1">
-                <h3>About This Site</h3>
-                <p>Welcome to Norfolk Snowsports Staff Portal. This site is where instructors can record their voluntered lessons and claim expenses. The current expense per voluntered hour as an instructor/coach is <strong>£4.80</strong> with a minimum of <strong>£7.20</strong> per lesson. For example if you are to do a one hour lesson you will recieve and expense of £7.20 whereas if you were to do a two hour lesson you will recieve £9.60. The mileage expense is caluclated by the amount of miles traveled from your house to Norfolk Snowsports club x <strong>£0.25</strong>. We greatly appriciate all of our volunteers and they time you give up to teach and coach at Norfolk Snowsports Club. If you have any question or need any help with this site please use the contact form below and a member of staff will get back to you shortly.</p>
-                <br>
+            <div class="row">
+                <div class="col s12">
+                    <h3>About This Site</h3>
+                    <p class="justify">Welcome to Norfolk Snowsports Staff Portal. This site is where instructors can record their voluntered
+                        lessons and claim expenses. The current expense per voluntered hour as an instructor/coach is
+                        <strong>£4.80</strong> with a minimum of <strong>£7.20</strong> per lesson. For example if you are to do
+                        a one hour lesson you will recieve and expense of £7.20 whereas if you were to do a two hour lesson you
+                        will recieve £9.60. The mileage expense is caluclated by the amount of miles traveled from your house to
+                        Norfolk Snowsports club x <strong>£0.25</strong>. We greatly appriciate all of our volunteers and they
+                        time you give up to teach and coach at Norfolk Snowsports Club. If you have any question or need any
+                        help with this site please use the contact form below and a member of staff will get back to you
+                        shortly.</p>
+                </div>
             </div>
         </div>
     </section>
     <section class="contact-us">
-        <form id="contact-form" onsubmit="return sendMail(this);">
+        <div class="container">
+            <form id="contact-form" onsubmit="return sendMail(this);">
                 <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <i class="fas fa-user-tag prefix"></i>
-                        <input id="firstname" name="firstname" type="text" class="validate">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix pur-icon"></i>
+                        <input id="firstname" name="firstname" type="text" class="validate contact-input">
                         <label for="firstname">First Name</label>
                     </div>
-                    <div class="input-field col s10 offset-s1">
-                        <i class="fas fa-user-tag prefix"></i>
-                        <input id="lastname" name="lastname" type="text" class="validate">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix pur-icon"></i>
+                        <input id="lastname" name="lastname" type="text" class="validate contact-input">
                         <label for="lastname">Last Name</label>
                     </div>
-                    <div class="input-field col s10 offset-s1">
-                        <i class="fas fa-at prefix"></i>
-                        <input id="emailaddress" name="emailaddress" type="text" class="validate">
+                    <div class="input-field col s12">
+                        <i class="fas fa-at prefix pur-icon"></i>
+                        <input id="emailaddress" name="emailaddress" type="text" class="validate contact-input">
                         <label for="emailaddress">Email Address</label>
                     </div>
-                    <div class="input-field col s10 offset-s1">
-                        <i class="fas fa-question prefix"></i>
-                        <textarea id="question" name="question" rows="10" type="text" class="validate"></textarea>
+                    <div class="input-field col s12">
+                        <i class="fas fa-question prefix pur-icon"></i>
+                        <textarea id="question" name="question" rows="10" type="text" class="validate contact-input"></textarea>
                         <label for="question">Question(s)</label>
                     </div>
-                    <div class="col s10  offset-s1 form-field">
+                    <div class="col s12 form-field center-align submit-btn">
                         <button type="submit" class="btn">Submit Question</button>
                     </div>
                 </div>
             </form>
+        </div>
     </section>
     
 {% endblock %}

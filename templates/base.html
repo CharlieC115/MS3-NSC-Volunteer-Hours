@@ -25,7 +25,7 @@
         <!-- top navbar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo">NSC Volunteer Hours</a>
+                <a href="{{ url_for('home') }}" class="brand-logo left"><img src="https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png" alt="" height="100" width="100"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -61,7 +61,7 @@
         </ul>
     </header>
 
-    <section>
+    <section class="flash-msg">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -82,15 +82,26 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col s6">
+                <div class="col s12 m6">
                     <h5 class="white-text">Get In Touch</h5>
                     <ul>
-                        <li>01603 662781</li>
-                        <li>reception@norfolksnowsports.com</li>
-                        <li><a href="https://www.norfolksnowsports.com/">www.norfolksnowsports.com</a></li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            01603 662781
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            reception@norfolksnowsports.com
+                        </li>
+                        <li>
+                            <a href="https://www.norfolksnowsports.com/">
+                                <i class="fas fa-globe-africa"></i>
+                                www.norfolksnowsports.com
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col s3">
+                <div class="col s6 m3">
                     <h5 class="white-text">Norfolk Snowsports Club</h5>
                     <ul>
                         <li>Whitlingham Lane</li>
@@ -99,7 +110,7 @@
                         <li>NR14 8TW</li>
                     </ul>
                 </div>
-                <div class="col s3">
+                <div class="col s6 m3">
                     <h5 class="white-text">Follow Us</h5>
                     <ul>
                         <li>
