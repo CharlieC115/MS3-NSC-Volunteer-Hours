@@ -35,7 +35,7 @@ def profile():
 def edit_profile(user_id):
     if request.method == 'POST':
         user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
-        
+
         user['first_name'] = request.form.get('first_name')
         user['last_name'] = request.form.get('last_name')
         user['email_address'] = request.form.get('email_address')
@@ -140,10 +140,16 @@ def new_record():
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
-        if lesson_mileage == 'Yes':
-            total_due = expense_due
+        mileage = 5.0
+
+        if lesson_mileage and lesson_expenses == 'Yes':
+            total_due = float(expense_due) + 5
+        elif lesson_expenses == 'Yes':
+            total_due = float(expense_due)
+        elif lesson_mileage == 'Yes':
+            total_due = float(mileage)
         else:
-            total_due = 0.00
+            total_due = 0.0
 
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
@@ -152,14 +158,9 @@ def new_record():
         dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
         millisec = dateti.timestamp()
 
-        miles = mongo.db.users.find_one({'_id': ObjectId(user_id)})
-        user['miles'] = request.form.get('miles')
-
-        mileage_a = user['miles_from_club'] * 0.25
-
         record = {
-            'lesson_date': request.form.get('lesson_date'),
-            'lesson_start': request.form.get('lesson_start'),
+            'lesson_date': date,
+            'lesson_start': start_time,
             'lesson_finish': request.form.get('lesson_finish'),
             'lesson_hours': lesson_hours,
             'lesson_type': request.form.get('activity_name'),
@@ -171,12 +172,14 @@ def new_record():
             'total_due': total_due
         }
 
+
         mongo.db.lessons.insert_one(record)
         flash('Record successfully Added')
         return redirect(url_for('lessons'))
 
+    users = mongo.db.users.find()
     activities = mongo.db.activities.find().sort('activity_name', 1)
-    return render_template('new_record.html', activities=activities)
+    return render_template('new_record.html', activities=activities, users=users)
 
 
 @app.route('/edit_record/<lesson_id>', methods=['GET', 'POST'])
@@ -204,8 +207,8 @@ def edit_record(lesson_id):
         millisec = dateti.timestamp()
 
         record = {
-            'lesson_date': request.form.get('lesson_date'),
-            'lesson_start': request.form.get('lesson_start'),
+            'lesson_date': date,
+            'lesson_start': start_time,
             'lesson_finish': request.form.get('lesson_finish'),
             'lesson_hours': lesson_hours,
             'lesson_type': request.form.get('activity_name'),

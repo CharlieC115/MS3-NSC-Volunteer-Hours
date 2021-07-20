@@ -55,6 +55,16 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                        {% for user in users %}
+                        {% if session.user|lower == user.username|lower %}
+                        <i class="fas fa-map-marker-alt prefix"></i>
+                        <input value="{{ user.miles_from_club }}" id="miles_from_club" name="miles_from_club" type="number"
+                            class="validate white-text" disabled>
+                        <label class="white-text" for="miles_from_club">Distance from Club (miles)</label>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="input-field col s12">
                         <div class="switch">
                             <i class="fas fa-gas-pump prefix"></i>
                             <label for="lesson_mileage">
