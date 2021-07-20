@@ -142,14 +142,17 @@ def new_record():
 
         mileage = 5.0
 
-        if lesson_mileage and lesson_expenses == 'Yes':
-            total_due = float(expense_due) + 5
-        elif lesson_expenses == 'Yes':
-            total_due = float(expense_due)
-        elif lesson_mileage == 'Yes':
-            total_due = float(mileage)
+        if lesson_expenses == 'Yes':
+            total_expense = float(expense_due)
         else:
-            total_due = 0.0
+            total_expense = 0.0
+
+        if lesson_mileage == 'Yes':
+            total_mileage = mileage
+        else:
+            total_mileage = 0.0
+
+        total_due = total_expense + total_mileage
 
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
@@ -194,10 +197,19 @@ def edit_record(lesson_id):
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
+        mileage = 5.0
+
         if lesson_expenses == 'Yes':
-            total_due = expense_due
+            total_expense = float(expense_due)
         else:
-            total_due = 0.00
+            total_expense = 0.0
+
+        if lesson_mileage == 'Yes':
+            total_mileage = mileage
+        else:
+            total_mileage = 0.0
+
+        total_due = total_expense + total_mileage
 
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
@@ -267,13 +279,6 @@ def edit_activity(activity_id):
 
     activity = mongo.db.activities.find_one({'_id': ObjectId(activity_id)})
     return render_template('edit_activity.html', activity=activity)
-
-
-@app.route('/delete_activity/<activity_id>')
-def delete_activity(activity_id):
-    mongo.db.activities.remove({'_id': ObjectId(activity_id)})
-    flash('Activity Successfully Deleted')
-    return redirect(url_for('manage_activities'))
 
 
 if __name__ == '__main__':

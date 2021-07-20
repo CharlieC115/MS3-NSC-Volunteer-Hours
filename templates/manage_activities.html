@@ -20,7 +20,6 @@
                     </div>
                     <div class="card-action cus-btn-2">
                         <a href="{{ url_for('edit_activity', activity_id=activity._id) }}" class="btn">Edit</a>
-                        <a href="{{ url_for('delete_activity', activity_id=activity._id) }}" class="btn">Delete</a>
                     </div>
                 </div>
             </div>
@@ -44,9 +43,7 @@
                             <th>Address Line 2</th>
                             <th>Home City</th>
                             <th>Home Post Code</th>
-                            <th>Distance (Miles)</th>
                             <th>Edit?</th>
-                            <th>Delete?</th>
                         </tr>
                     </thead>
 
@@ -61,7 +58,6 @@
                             <td>{{user.address_line_2}}</td>
                             <td>{{user.address_city}}</td>
                             <td>{{user.address_post_code}}</td>
-                            <td>{{user.miles_from_club}}</td>
                             <td><a href="{{ url_for('edit_profile', user_id=user._id) }}" class="btn">Edit</a></td>
                         </tr>
                         {% endfor %}
