@@ -1,10 +1,5 @@
 /* sizing and display */
 
-@viewport {
-    width: device-width;
-    zoom: 1.0 ;
-}
-
 .row {
     margin: 0;
 }
