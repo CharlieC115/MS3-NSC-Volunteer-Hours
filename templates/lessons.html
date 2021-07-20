@@ -18,6 +18,7 @@
                             <th>Lesson Type</th>
                             <th>Mileage?</th>
                             <th>Claim Expenses?</th>
+                            <th>Total Due</th>
                             <th>Edit?</th>
                             <th>Delete?</th>
                         </tr>
@@ -36,6 +37,7 @@
                             <td>{{ lesson.lesson_type }}</td>
                             <td>{{ lesson.lesson_mileage }}</td>
                             <td>{{ lesson.lesson_expenses }}</td>
+                            <td>{{ lesson.total_due }}</td>
                             <td><a href="{{ url_for('edit_record', lesson_id=lesson._id) }}" class="btn">Edit</a></td>
                             <td><a href="{{ url_for('delete_record', lesson_id=lesson._id) }}" class="btn">Delete</a>
                             </td>

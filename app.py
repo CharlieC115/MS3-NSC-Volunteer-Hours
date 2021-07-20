@@ -34,17 +34,16 @@ def profile():
 @app.route('/edit_profile/<user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
     if request.method == 'POST':
-
-        user = {
-            'first_name': request.form.get('first_name'),
-            'last_name': request.form.get('last_name'),
-            'email_address': request.form.get('email_address'),
-            'address_line_1': request.form.get('address_line_1'),
-            'address_line_2': request.form.get('address_line_2'),
-            'address_city': request.form.get('address_city'),
-            'address_post_code': request.form.get('address_post_code'),
-            'miles_from_club': request.form.get('miles_from_club')
-        }
+        user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+        
+        user['first_name'] = request.form.get('first_name')
+        user['last_name'] = request.form.get('last_name')
+        user['email_address'] = request.form.get('email_address')
+        user['address_line_1'] = request.form.get('address_line_1')
+        user['address_line_2'] = request.form.get('address_line_2')
+        user['address_city'] = request.form.get('address_city')
+        user['address_post_code'] = request.form.get('address_post_code')
+        user['miles_from_club'] = request.form.get('miles_from_club')
 
         mongo.db.users.update({'_id': ObjectId(user_id)}, user)
         flash('User successfully Updated')
@@ -141,12 +140,22 @@ def new_record():
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
+        if lesson_mileage == 'Yes':
+            total_due = expense_due
+        else:
+            total_due = 0.00
+
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
         full_date_time = date + ' ' + start_time
 
         dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
         millisec = dateti.timestamp()
+
+        miles = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+        user['miles'] = request.form.get('miles')
+
+        mileage_a = user['miles_from_club'] * 0.25
 
         record = {
             'lesson_date': request.form.get('lesson_date'),
@@ -158,7 +167,8 @@ def new_record():
             'lesson_expenses': lesson_expenses,
             'entry_by': session['user'],
             'expense_due': expense_due,
-            'datetime_millisec': millisec
+            'datetime_millisec': millisec,
+            'total_due': total_due
         }
 
         mongo.db.lessons.insert_one(record)
@@ -181,6 +191,11 @@ def edit_record(lesson_id):
         else:
             expense_due = str(round(float(lesson_hours) * 4.8, 2))
 
+        if lesson_expenses == 'Yes':
+            total_due = expense_due
+        else:
+            total_due = 0.00
+
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
         full_date_time = date + ' ' + start_time
@@ -198,7 +213,8 @@ def edit_record(lesson_id):
             'lesson_expenses': lesson_expenses,
             'entry_by': session['user'],
             'expense_due': expense_due,
-            'datetime_millisec': millisec
+            'datetime_millisec': millisec,
+            'total_due': total_due
         }
 
         mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
