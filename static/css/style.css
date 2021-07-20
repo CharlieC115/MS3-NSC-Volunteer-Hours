@@ -63,6 +63,18 @@ p, li {
     letter-spacing: 2px;
 }
 
+/* input-fields */
+
+.input-field label, .input-field input, .input-field i{
+    color: #FFF;
+}
+
+.input-field label, .input-field input{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
 /* navabar and footer */
 
 nav {
@@ -114,13 +126,12 @@ nav {
     background-color: #cbd514;
 }
 
-.pur-icon {
+.input-field .pur-icon, .input-field .pur-text {
     color: #202945;
 }
 
 .input-field label {
-    color: #202945;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -202,10 +213,6 @@ a {
     background-color: #202945;
 }
 
-.white-icon {
-    color: #FFF;
-}
-
 .login-btn button {
     background-color: #cbd514;
     color: #202945;
@@ -266,7 +273,6 @@ a {
     margin: 20px;
     border: 0;
     line-height: 0;
-    width: 10px;
 }
 
 .register-btn button:hover {
@@ -294,6 +300,53 @@ a {
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
+}
+
+/* profile.html */
+
+.profile {
+    background-color: #202945;
+}
+
+.profile-edit-btn a {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 20px;
+    border: 0;
+}
+
+.profile-edit-btn a:hover {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 20px;
+    border: 0;
+    transform: scale(1.3);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.profile-edit-btn a:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.white-text {
+    color: #FFF;
 }
 
 /* media queries */
