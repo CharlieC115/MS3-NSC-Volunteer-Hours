@@ -283,6 +283,63 @@ a {
     background-color: #202945;
 }
 
+/* manage activities */
+
+.manage-activities {
+    background-color: #202945;
+}
+
+.card-panel {
+    background-color: #cbd514;
+    border-radius: 25px;
+}
+
+.cus-card-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #202945;
+    font-weight: 700;
+}
+
+.cus-btn-2 a {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 5px 0;
+    border: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.cus-btn-2 a:hover {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 5px;
+    border: 0;
+    text-align: center;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.cus-btn-2 a:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 403px) {

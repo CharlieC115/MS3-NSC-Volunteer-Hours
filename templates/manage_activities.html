@@ -1,30 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h3 class="center-align">Manage Activities</h3>
-
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('new_activity') }}" class="btn">
-                New Activity <i class="fas fa-plus-square right"></i>
-            </a>
+<section class="manage-activities">
+    <div class="container">
+        <div class="row">
+            <h3 class="center-align">Manage Activities</h3>
+            <div class="col s12 center-align cus-btn">
+                <a href="{{ url_for('new_activity') }}" class="btn">
+                    New Activity <i class="fas fa-plus-square"></i>
+                </a>
+            </div>
         </div>
-    </div>
-
-    <div class="row">
-        {% for activity in activities %}
+        <div class="row">
+            {% for activity in activities %}
             <div class="col s12 m3">
-                <div class="center-align">
+                <div class="center-align card-panel">
                     <div>
-                        <span>{{ activity.activity_name }}</span>
+                        <span class="cus-card-text">{{ activity.activity_name }}</span>
                     </div>
-                    <div class="card-action">
+                    <div class="card-action cus-btn-2">
                         <a href="{{ url_for('edit_activity', activity_id=activity._id) }}" class="btn">Edit</a>
                         <a href="{{ url_for('delete_activity', activity_id=activity._id) }}" class="btn">Delete</a>
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+</section>
 
 {% endblock %}
