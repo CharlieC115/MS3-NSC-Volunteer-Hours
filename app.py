@@ -33,6 +33,22 @@ def profile():
 
 @app.route('/edit_profile/<user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
+    if request.method == 'POST':
+
+        user = {
+            'first_name': request.form.get('first_name'),
+            'last_name': request.form.get('last_name'),
+            'email_address': request.form.get('email_address'),
+            'address_line_1': request.form.get('address_line_1'),
+            'address_line_2': request.form.get('address_line_2'),
+            'address_city': request.form.get('address_city'),
+            'address_post_code': request.form.get('address_post_code'),
+            'miles_from_club': request.form.get('miles_from_club')
+        }
+
+        mongo.db.users.update({'_id': ObjectId(user_id)}, user)
+        flash('User successfully Updated')
+
     users = mongo.db.users.find_one({'_id': ObjectId(user_id)})
     return render_template('edit_profile.html', users=users)
 
