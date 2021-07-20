@@ -202,8 +202,9 @@ def delete_record(lesson_id):
 
 @app.route('/manage_activities')
 def manage_activities():
+    users = mongo.db.users.find()
     activities = list(mongo.db.activities.find().sort('activity_name', 1))
-    return render_template('manage_activities.html', activities=activities)
+    return render_template('manage_activities.html', activities=activities, users=users)
 
 
 @app.route('/new_activity', methods=['GET', 'POST'])

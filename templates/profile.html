@@ -68,6 +68,15 @@
                             <label for="address_post_code">Home Post Code</label>
                         </div>
                     </div>
+                    <!-- miles -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user prefix"></i>
+                            <input value="{{ user.miles }}" id="miles" name="miles" type="text" class="validate white-text"
+                                disabled>
+                            <label class="white-text" for="miles">Distance from Club (miles)</label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col s12 cus-btn center-align">
                             <a href="{{ url_for('edit_profile', user_id=user._id)}}" class="btn s12">Edit Profile <i class="fas fa-sign-in-alt"></i></a>
