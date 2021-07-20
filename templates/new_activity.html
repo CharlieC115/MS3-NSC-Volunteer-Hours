@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section class="back-pur new-activity">
+<section class="back-pur tail">
     <div class="container">
         <div class="row">
             <h3 class="center-align">Add Activity</h3>
@@ -19,8 +19,8 @@
                         <a href="{{ url_for('manage_activities') }}" class="btn">
                             Cancel <i class="fas fa-times-circle right"></i>
                         </a>
-                        </div>
-                        <div class="col s6 center-align cus-btn">
+                    </div>
+                    <div class="col s6 center-align cus-btn">
                         <button type="submit" class="btn">
                             Add Activity <i class="fas fa-plus-square right"></i>
                         </button>
@@ -30,4 +30,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}
