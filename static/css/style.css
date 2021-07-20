@@ -147,12 +147,14 @@ nav {
     background-color: #CE0E2D;
 }
 
-/* home.html */
-/* home section */
+/* section colours */
 
-.home {
+.back-pur {
     background-color: #202945;
 }
+
+/* home.html */
+/* home section */
 
 .justify {
     text-align: justify;
@@ -164,7 +166,7 @@ nav {
     background-color: #cbd514;
 }
 
-.input-field .pur-icon, .input-field .pur-text {
+.input-field .pur-icon, .input-field .pur-text, .pur-text{
     color: #202945;
 }
 
@@ -245,49 +247,13 @@ a {
     -o-transition: all 0.5s ease-in-out;
 }
 
-/* login.html */
-
-.login {
-    background-color: #202945;
-}
-
-/* register */
-
-.register {
-    background-color: #202945;
-}
-
 /* profile.html */
-
-.profile {
-    background-color: #202945;
-}
 
 .white-text {
     color: #FFF;
 }
 
-/* edit_profile.html */
-
-.edit-profile {
-    background-color: #202945;
-}
-
-.login {
-    background-color: #202945;
-}
-
-/* new record */
-
-.new-record {
-    background-color: #202945;
-}
-
 /* manage activities */
-
-.manage-activities {
-    background-color: #202945;
-}
 
 .card-panel {
     background-color: #cbd514;
