@@ -310,9 +310,67 @@ a {
     -o-transition: all 0.5s ease-in-out;
 }
 
-/* new activity */
+/* lessons */
 
+.lessons-table {
+    width: 100%;
+    overflow: auto;
+}
 
+th, td {
+    font-size: 14px;
+    color: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+th {
+    border-bottom: 1px solid #FFF;
+}
+
+.cus-tbl-btn a {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    border: 0;
+}
+
+.cus-tbl-btn a:hover {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    border: 0;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.cus-tbl-btn a:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* code copied from stack overflow and customised */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #cbd514;
+}
+/* end of copied code */
 
 /* media queries */
 

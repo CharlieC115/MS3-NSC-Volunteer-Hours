@@ -1,44 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h3 class="center-align">My Lessons</h3>
+<section class="back-pur">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 lessons-table">
+                <h3 class="center-align">My Lessons</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>Finish Time</th>
+                            <th>Hours</th>
+                            <th>Expense Due</th>
+                            <th>Lesson Type</th>
+                            <th>Mileage?</th>
+                            <th>Claim Expenses?</th>
+                            <th>Edit?</th>
+                            <th>Delete?</th>
+                        </tr>
+                    </thead>
 
-    <table>
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>Finish Time</th>
-                <th>Hours</th>
-                <th>Expense Due</th>
-                <th>Lesson Type</th>
-                <th>Mileage?</th>
-                <th>Claim Expenses?</th>
-                <th>Edit?</th>
-                <th>Delete?</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            {% for lesson in lessons %}
-                {% if session.user|lower == lesson.entry_by|lower or session.user|lower == 'nscadmin' %}
-                <tr>
-                    <td>{{ lesson.entry_by }}</td>
-                    <td>{{ lesson.lesson_date }}</td>
-                    <td>{{ lesson.lesson_start }}</td>
-                    <td>{{ lesson.lesson_finish }}</td>
-                    <td>{{ lesson.lesson_hours }}</td>
-                    <td>{{ lesson.expense_due}}</td>
-                    <td>{{ lesson.lesson_type }}</td>
-                    <td>{{ lesson.lesson_mileage }}</td>
-                    <td>{{ lesson.lesson_expenses }}</td>
-                    <td><a href="{{ url_for('edit_record', lesson_id=lesson._id) }}" class="btn">Edit</a></td>
-                    <td><a href="{{ url_for('delete_record', lesson_id=lesson._id) }}" class="btn">Delete</a></td>
-                </tr>
-                {% endif %}
-            {% endfor %}
-        </tbody> 
-    </table>
+                    <tbody>
+                        {% for lesson in lessons %}
+                        {% if session.user|lower == lesson.entry_by|lower or session.user|lower == 'nscadmin' %}
+                        <tr class="cus-tbl-btn">
+                            <td>{{ lesson.entry_by }}</td>
+                            <td>{{ lesson.lesson_date }}</td>
+                            <td>{{ lesson.lesson_start }}</td>
+                            <td>{{ lesson.lesson_finish }}</td>
+                            <td>{{ lesson.lesson_hours }}</td>
+                            <td>{{ lesson.expense_due}}</td>
+                            <td>{{ lesson.lesson_type }}</td>
+                            <td>{{ lesson.lesson_mileage }}</td>
+                            <td>{{ lesson.lesson_expenses }}</td>
+                            <td><a href="{{ url_for('edit_record', lesson_id=lesson._id) }}" class="btn">Edit</a></td>
+                            <td><a href="{{ url_for('delete_record', lesson_id=lesson._id) }}" class="btn">Delete</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
