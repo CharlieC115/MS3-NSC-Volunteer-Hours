@@ -259,6 +259,7 @@ a {
 .card-panel {
     background-color: #cbd514;
     border-radius: 25px;
+    height: 150px;
 }
 
 .cus-card-text {
@@ -358,7 +359,7 @@ th {
     -o-transition: all 0.5s ease-in-out;
 }
 
-/* code copied from stack overflow and customised */
+/* code copied from stack overflow and customised | scroll bar customisation */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
 }
