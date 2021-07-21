@@ -313,9 +313,33 @@ def delete_record(lesson_id):
 
 @app.route('/manage_activities')
 def manage_activities():
+
+    hours = mongo.db.lessons.find({}, {'_id': 0, 'lesson_hours': 1})
+    
+    hours_total = 0
+    for hour in hours:
+        hour_num = float(hour['lesson_hours'])
+        hours_total = hours_total + hour_num
+
+    expenses = mongo.db.lessons.find({}, {'_id': 0, 'expense_due': 1})
+
+    expense_total = round(0, 2)
+    for expense in expenses:
+        expense_num = float(expense['expense_due'])
+        expense_total = expense_total + expense_num
+
+    total_expense = mongo.db.lessons.find({}, {'_id': 0, 'total_due': 1})
+
+    overall_expenses = round(0, 2)
+    for t_expense in total_expense:
+        overall_expense_num = float(t_expense['total_due'])
+        overall_expenses = overall_expenses + overall_expense_num
+    
+    total_mileage = round((overall_expenses - expense_total), 2)
+
     users = mongo.db.users.find()
     activities = list(mongo.db.activities.find().sort('activity_name', 1))
-    return render_template('manage_activities.html', activities=activities, users=users)
+    return render_template('manage_activities.html', activities=activities, users=users, hours_total=hours_total, expense_total=expense_total, total_mileage=total_mileage)
 
 
 @app.route('/new_activity', methods=['GET', 'POST'])
