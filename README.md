@@ -69,15 +69,14 @@ The site admin will be NSC employees.
 
 * Admin can view, edit and delete any and all lessons input by instructors.
 * Admin can add new records of lessons on an instructors behalf.
-* Admin can new lesson types/categories.
-* Admin can edit the contents of the home/launch page.
-* Admin can view, edit and delete users.
+* Admin can add new lesson types/categories and edit existing ones.
+* Admin can view and edit users.
 
 ### User Stories
 
 #### As an instructor I would like to:
 
-* Easily add lessons I have created to the NSC Volunteer Hours Site.
+* Easily add lessons I have done to the NSC Volunteer Hours Site.
 * View all my lessons volunteered.
 * Edit and delete any records I have incorrectly added.
 * See an overview of the hours I have volunteered and the expenses due.
@@ -89,12 +88,13 @@ The site admin will be NSC employees.
 * Edit and delete any records that are incorrect.
 * See an overview of all hours and expenses.
 * Easily search for a user or a lesson type/category.
-* Edit and delete user information.
-* Update the home/landing page.
-* Add, Edit and Delete new lesson types/categories.
+* Edit user information.
+* Add and Edit new and existing lesson types/categories.
 * Input lesson information on an instructors behalf.
 
 ### Wireframes
+
+I used [Balsamiq.com](https://balsamiq.com/) to create the wireframes.
 
 ### Surface
 
@@ -106,15 +106,20 @@ Main colours used in project:
 * Primary colour two - HEX: #ce0e2d, RGB: R: 206 G: 14 B: 45
 * Secondary colour one - HEX: #fff, RGB: R: 255 G: 255 B: 255
 * Secondary colour two - HEX: #cbd514, RGB: R: 203 G: 213 B: 20
-* Secondary colour three - HEX: #e0592a, RGB: R: 224 G: 89 B: 42
 
 #### Fonts
 
-* Primary font - Termina
-* Secondary font - Ubuntu Light
-* Back-up font - sans-serif
+* Primary font - 'Work Sans' was chosen as this is part of Norfolk Snowsports Clubs brand image and this is a clear, easy to read font.
+* Secondary font - 'Ubuntu' was chosen as this is part of Norfolk Snowsports Clubs brand image and tis is also a clear, easy to read font.
+* Back-up font - 'sans-serif' chosen as a back-up to the primary and secondary fonts for is wide acceptability accross platforms and it's clear, easy to read properties.
 
-#### Images
+The above fonts are perfect for a website aimed at staff/volunteers. The users are here to input thier lesson not see overly fancy, difficult to read font.
+
+#### Images & logos
+
+No images as such have been used for this website as this site is intend as a site for staff and volunteers therefore by reducing distractions this will increase efficiency.
+
+The Norfolk Snowsports Club Logo has been used and this is linked in the header of the base.html file.
 
 Back to [Table of Contents](#table-of-contents)
 
