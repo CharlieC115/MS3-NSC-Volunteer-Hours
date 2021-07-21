@@ -48,7 +48,7 @@ This site has been created to reduce the amount of admin work at Norfolk Snowspo
 
 ### Project goals
 
-The primary goal of the NSC Volunteer Hours website is to reduce the amount of admin work needed when volunteer instructors submit their hours at Norfolk Snowsports Club, NSC. Currently instructors complete a lesson, write their hours in a daily log then this in manually input onto an access database and an excel sheet. The expenses are then caluclated, printed and sent to accounts for accounts to type the information into their excel sheets. This site will allow instructors to enter their details and there expenses will automatically be calculated saving hundreds of hours a year in admin time.
+The primary goal of the NSC Volunteer Hours website is to reduce the amount of admin work needed when volunteer instructors submit their hours at Norfolk Snowsports Club, NSC. Currently instructors complete a lesson, write their hours in a daily log then this in manually input onto an access database and an excel sheet. The expenses are then caluclated, printed and sent to accounts for accounts to type the information into their excel sheets. This site will allow instructors to enter their details and their expenses will automatically be calculated saving hundreds of hours a year in admin time.
 
 The secondary goal is to provide instructors a place where they can easily see their recent hours worked, their expenses due and their freetime accrued. Typically instructors can only see this information once every three months when their expenses statements are print but this site will allow them live view of all their record hours at any one time.
 
@@ -61,7 +61,6 @@ The users will be volunteer ski and snowboard instructors and coaches.
 * Users can add the lessons they have completed.
 * Users can see the lessons they have added.
 * Users can update and delete the lessons they have added.
-* Users can see a running total of the hours they have voluntered and their expenses due.
 * Users can Search for lesson by their type/category.
 
 #### Site Admins Goals:
