@@ -192,6 +192,63 @@ def new_record():
     return render_template('new_record.html', activities=activities, users=users)
 
 
+@app.route('/new_record_admin', methods=['GET', 'POST'])
+def new_record_admin():
+    if request.method == 'POST':
+        lesson_hours = request.form.get('lesson_hours')
+        lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
+        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+
+        if float(lesson_hours) < 1.5:
+            expense_due = 7.2
+        else:
+            expense_due = str(round(float(lesson_hours) * 4.8, 2))
+
+        mileage = 5.0
+
+        if lesson_expenses == 'Yes':
+            total_expense = float(expense_due)
+        else:
+            total_expense = 0.0
+
+        if lesson_mileage == 'Yes':
+            total_mileage = mileage
+        else:
+            total_mileage = 0.0
+
+        total_due = total_expense + total_mileage
+
+        date = request.form.get('lesson_date')
+        start_time = request.form.get('lesson_start')
+        full_date_time = date + ' ' + start_time
+
+        dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
+        millisec = dateti.timestamp()
+
+        record = {
+            'lesson_date': date,
+            'lesson_start': start_time,
+            'lesson_finish': request.form.get('lesson_finish'),
+            'lesson_hours': lesson_hours,
+            'lesson_type': request.form.get('activity_name'),
+            'lesson_mileage': lesson_mileage,
+            'lesson_expenses': lesson_expenses,
+            'entry_by': request.form.get('user_admin_input'),
+            'expense_due': expense_due,
+            'datetime_millisec': millisec,
+            'total_due': total_due
+        }
+
+
+        mongo.db.lessons.insert_one(record)
+        flash('Record successfully Added')
+        return redirect(url_for('lessons'))
+
+    users = mongo.db.users.find()
+    activities = mongo.db.activities.find().sort('activity_name', 1)
+    return render_template('new_record_admin.html', activities=activities, users=users)
+
+
 @app.route('/edit_record/<lesson_id>', methods=['GET', 'POST'])
 def edit_record(lesson_id):
     if request.method == 'POST':

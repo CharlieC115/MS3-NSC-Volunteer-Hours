@@ -5,7 +5,19 @@
     <div class="container">
         <div class="row">
             <h3 class="center-align">New Record</h3>
-            <form class="col s12" method="POST" action="{{ url_for('new_record') }}">
+            <form class="col s12" method="POST" action="{{ url_for('new_record_admin') }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-skiing prefix"></i>
+                        <select id="user_admin_input" name="user_admin_input" class="validate" required>
+                            <option value="" disabled selected>Choose Instructor</option>
+                            {% for user in users %}
+                            <option value="{{ user.username }}">{{ user.username }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="user_admin_input">Instructor Username</label>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-calendar-alt prefix"></i>
