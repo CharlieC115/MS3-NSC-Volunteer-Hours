@@ -19,6 +19,10 @@ This site has been created to reduce the amount of admin work at Norfolk Snowspo
     - [User Stories](#user-stories)
     - [Wireframes](#wireframes)
     - [Surface](#surface)
+- [Backend](#backend)
+    - [Database](#database)
+    - [Database Schema](#database-schema)
+    - [MongoDB](#mongodb)
 - [Features](#features)
     - [Navigation Bar](#navigation-bar)
     - [Home Page](#home-page)
@@ -120,6 +124,33 @@ The above fonts are perfect for a website aimed at staff/volunteers. The users a
 No images as such have been used for this website as this site is intend as a site for staff and volunteers therefore by reducing distractions this will increase efficiency.
 
 The Norfolk Snowsports Club Logo has been used and this is linked in the header of the base.html file.
+
+Back to [Table of Contents](#table-of-contents)
+
+---
+---
+
+## Backend
+
+---
+
+### Database
+
+The database, volunteer_hours, consists of 3 collections:
+
+* Users - used to store users personal details and login information.
+* Lessons - used to store all submitted lesson records.
+* Activities - used to store all submitted activity types.
+
+### Database Schema
+
+The Lessons collection is linked to the users collection from the lesson entry_by to user id and the lessons collection is linked to the activities collection from the lesson lesson_type to the activites id.
+
+![Database Schema](static/screenshots/database_schema.png)
+
+### MongoDB
+
+Mongo Db was chosen as it is user friendly, easy to use and supports non ralational databases.
 
 Back to [Table of Contents](#table-of-contents)
 
@@ -294,13 +325,29 @@ Back to [Table of Contents](#table-of-contents)
 
 * [GitHub](https://github.com/) was used as the site's repository.
 
+#### Materialize
+
+* [Materialize](https://materializecss.com/) was used as a framework.
+
 #### Gitpod
 
 * [Gitpod](https://gitpod.io/workspaces/) was used as a development hosting platform.
 
+#### Heroku
+
+* [Heroku](https://www.heroku.com/) was used as a cloub application platform.
+
+#### MongoDB
+
+* [MongoDB]() was used as a cloud database.
+
 #### Wireframes
 
 * [Balsamiq.com](https://balsamiq.com/) was used as a wireframe tool to sketch the structure of the site.
+
+#### DBDiagram
+
+* [DBDiagram](https://dbdiagram.io/home) was used to build the sites database schema.
 
 Back to [Table of Contents](#table-of-contents)
 
