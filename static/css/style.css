@@ -375,6 +375,28 @@ th {
 }
 /* end of copied code */
 
+/* new records */
+
+.datepicker-date-display, .timepicker-digital-display {
+    background-color: #cbd514;
+}
+
+.datepicker-date-display .year-text, .date-text, .timepicker-span-minutes, .timepicker-span-hours, .timepicker-text-container {
+    color: #202945;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: #cbd514;
+}
+
+.datepicker-day-button, .datepicker-table abbr {
+    color: #FFF;
+}
+
+.datepicker-calendar-container, .timepicker-analog-display {
+    background-color: #202945;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 403px) {
