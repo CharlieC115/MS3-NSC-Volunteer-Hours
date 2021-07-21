@@ -12,7 +12,11 @@
                         <select id="user_admin_input" name="user_admin_input" class="validate" required>
                             <option value="" disabled selected>Choose Instructor</option>
                             {% for user in users %}
-                            <option value="{{ user.username }}">{{ user.username }}</option>
+                            {% if user.username|lower == 'nscadmin'|lower %}
+                                <option value="{{ user.username }}" disabled>{{ user.username }}</option>
+                            {% else %}
+                                <option value="{{ user.username }}">{{ user.username }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="user_admin_input">Instructor Username</label>
