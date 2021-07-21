@@ -130,9 +130,104 @@ Back to [Table of Contents](#table-of-contents)
 
 ---
 
+This website consists of 13 pages using templating language to load these inside the base.html page. The website pages and features are as follows:
+
 ### Navigation bar
 
-### Home page
+* The navigation bar is fixed at the top of every page so user can easily navigate between the pages and have a point of reference.
+* The site logo acts as a home button returning users to the home page when clicked.
+* For smaller screen sizes the navbar links will collapse into a hamburger menu which is expected amungst most mobile sites now.
+* Admin user will have a couple of different navbar links appear/change that normal users can't see allowing them to access pages only used for admin.
+
+### Footer
+
+* The footer shows information include contact details, address and copyright info.
+* The footer has links to the clubs social media sites.
+* Club website is also linked in the footer and can also be clicked.
+* All external links open in new tabs.
+
+### Home Page
+
+#### About This Site Section
+
+* The about us section has a small amount of information about how expenses are calculated and a brief description of why this site was created.
+
+#### Contact us Section
+
+* This allows users to contact admin staff with questions.
+* Form responds to user input.
+* The form has an alert that informs the user that their message has been sent.
+* The form will also display a message if an input isn't accepted and why.
+
+### Login Page
+
+* Clear easy to understand login page that accepts correct username and password combination.
+* Flash message displayed if username or password is wrong.
+* Automatic redirect to profile page when username and password is correct.
+* Flash message displayed when redirected to the profile page.
+* The input fields will also display a message if an input isn't accepted and why.
+* Call to action below login button for people who need to register. This can be clicked to link them to register page.
+
+### Register Page
+
+* Clear easy to understand register page that accepts takes a variety of personal details.
+* The input fields will display a message if an input isn't accepted and why.
+* Call to action below register button for people who need to login instead of register. This can be clicked to link them to login page.
+* Automatic redirect to profile page when form is complete and button is clicked.
+* Flash message displayed when redirected to the profile page.
+
+### Profile Page
+
+* Users information automatically populates the form fields.
+* Username is displayed but cannot be edited to avoid any bugs that will be caused in the records pages.
+* User password is hidden to avoid any chace of this being corrupted or recorded by a third party.
+
+### Edit Profile Page
+
+* Users information automatically populates the form fields making it easier and quicker to submit when small changes are made.
+* Users usname is displayyed above so the user knows they're editing their profile.
+* Automatic redirect to profile page when changes are submitted.
+* Flash message displayed when edits are submitted.
+
+### My Lessons Page
+
+* Search bar to allow users to easily search the lesson type and user fields.
+* Table displaying all input records.
+* Functionality behing the table automatically calculates expenses due and displays these.
+* Edit button which directs the user to the edit record page.
+* Delete button to allow users to delete their own records.
+* Delete button has an alert to confirm if the user wishes to delete the record.
+* For smaller screen sizes the table becomes scrollable so the information doesn't have to be push together and so the user doesn't have to move the entire page.
+
+### New Record Page
+
+The user doesn't need to type anything making this information easier to input, reducing human error and making this app much more mobile friendly.
+
+* New record page allows user to easily input their lesson information.
+* Appropriate icons to assist with the readability of the form.
+* Lesson date allows users to select the date from a callender so this does not have to be typed.
+* Lesson start and finish times allow users to select a time from a clock so this does not have to be typed.
+* Hours and lesson type input fields both have drop downs allowing the user to select the correct option without having to type anything.
+* Switches used for mileage and expenses which allow the user an easy way of claiming this expenses.
+* Expenses? field starts on as most people claim this and Mileage? is off as not as many people claim this.
+* Automatic redirect to lessons page when record is submitted.
+* Flash message displayed when record is submitted o inform user that record has been added.
+
+### New Record Admin Page
+
+This has all of the above features from New Record Page and the following:
+
+* Only accessable by Admin user.
+* Allows the admin user to input the username of the instructor whos lesson the record relates to.
+
+### Edit Record Page
+
+### Site Manager Page
+
+### New Activity Page
+
+### Edit Activity Page
+
 
 ### Future Features
 
