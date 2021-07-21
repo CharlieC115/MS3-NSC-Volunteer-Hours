@@ -52,7 +52,9 @@
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 <li><a href="{{ url_for('lessons') }}">My Lessons</a></li>
                 <li><a href="{{ url_for('new_record') }}">New Record</a></li>
-                <li><a href="{{ url_for('manage_activities') }}">Manage Activities</a></li>
+                {% if session.user|lower == 'nscadmin'|lower %}
+                    <li><a href="{{ url_for('manage_activities') }}">Site Manager</a></li>
+                {% endif %}
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
