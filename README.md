@@ -222,14 +222,40 @@ This has all of the above features from New Record Page and the following:
 
 ### Edit Record Page
 
+* Lesson information automatically populates the form fields making it easier and quicker to submit when small changes are made. This also reasures the user they are editing the correct record.
+* Automatic redirect to lessons page when changes are submitted.
+* Flash message displayed when edits are submitted.
+
 ### Site Manager Page
+
+* This page also admin user to add new activities and edit current activities.
+* No delete option to avoid any potential data corrupiton.
+* Statistics section displaying a total of hours, expense and mileage.
+* User profile section where admin can see all user and edit.
 
 ### New Activity Page
 
+* Clear easy to understand new activity page that allows users to add an activity.
+* Automatic redirect to site manager page when activity is submitted.
+* Flash message displayed when activity is submited
+
 ### Edit Activity Page
 
+* Clear easy to understand edit activity page that allows users to edit an activity.
+* Automatic redirect to site manager page when edit is submitted.
+* Flash message displayed when edit is submited.
 
 ### Future Features
+
+* Allow admit to edit home page from the site manager page use templating.
+* Confirm password field when users are registering to ensure the correct password was input.
+* Back end checks to check the session user is indeed admin so the pages can't be broken into as easily.
+* Seperate lessons on the lesson table by month, quarter and year.
+* Provide statistics for the totals of lesson values for month, quater and year.
+* Compare month on month, quarter on quarter and year on year values in site manager page.
+* Allow users to email themselves a table of their records.
+* Input accurate mileage figures and have this calculated in the table.
+* Show a record of expenses per user.
 
 Back to [Table of Contents](#table-of-contents)
 
