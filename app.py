@@ -124,7 +124,14 @@ def logout():
 
 @app.route('/lessons')
 def lessons():
-    lessons = mongo.db.lessons.find().sort('datetime_millisec', 1)
+    lessons = list(mongo.db.lessons.find().sort('datetime_millisec', 1))
+    return render_template('lessons.html', lessons=lessons)
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form.get('query')
+    lessons = list(mongo.db.lessons.find({'$text': {'$search': query}}).sort('datetime_millisec', 1))
     return render_template('lessons.html', lessons=lessons)
 
 

@@ -5,6 +5,27 @@
     <div class="container">
         <div class="row">
             <h3 class="center-align">My Lessons</h3>
+        </div>
+        <div class="row">
+            <form action="{{ url_for('search')}}" method="post" class="col s12">
+                <div class="row center-align">
+                    <div class="input-field col s12">
+                        <i class="fas fa-search prefix"></i>
+                        <input type="text" name="query" minlength="3" id="query" class="validate" required>
+                        <label for="query">Search Records</label>
+                    </div>
+                    <div class="col s12 m6 cus-btn">
+                        <a href="{{ url_for('lessons') }}" class="btn">Reset</a>
+                    </div>
+                    <div class="col s12 m6 cus-btn"> 
+                        <button type="submit" class="btn">
+                            <i class="fas fa-search left"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
             <div class="col s12 lessons-table">
                 <table>
                     <thead>
