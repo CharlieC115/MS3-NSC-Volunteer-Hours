@@ -600,6 +600,28 @@ Back to [Table of Contents](#table-of-contents)
 
 ---
 
+This project was deployed on heroku. I used gitpod as a development environment where all the changes were committed to the GitHub repository for version control. Heroku then recieved this information to keep the app up to date and current.
+
+To deploy I had to:
+
+Login and create a new app as shown below:
+![Deployment Screenshot 1](static/screenshots/deployment_1.png)
+![Deployment Screenshot 2](static/screenshots/deployment_2.png)
+
+Name the app and select the closets region in my case Europe then create app:
+![Deployment Screenshot 3](static/screenshots/deployment_3.png)
+
+On the deploy tab under deployment method click GitHub and the type the repositories name search. When you've found the correct repository connect and then scroll down and click deploy automatically:
+![Deployment Screenshot 4](static/screenshots/deployment_4.png)
+
+Next go to settings and add the config vars: 
+![Deployment Screenshot 5](static/screenshots/deployment_5.png)
+
+When this is done return to the deploy tab and click deploy branch: 
+![Deployment Screenshot 6](static/screenshots/deployment_6.png)
+
+The project is now deployed to Heroku.
+
 Back to [Table of Contents](#table-of-contents)
 
 ---
