@@ -40,7 +40,6 @@ This site has been created to reduce the amount of admin work at Norfolk Snowspo
     - [Learning resources and styling ideas](#learning-resources-and-styling-ideas)
     - [Code](#code)
     - [Images Used](#images-used)
-- [Other Information](#other-information)
 - [Project Screenshots](#project-screenshots)
 
 ---
@@ -652,16 +651,11 @@ Throughout learning with code institute I have researched and learnt using the f
 
 I have refactored a lot of the css and some of the python. Both could still have further refactoring in the future. the HTML, CSS, JavaScript and python all have lots of notes so when this code is revisted in the future it's easy to manipulate and understand.
 
-### Images Used
+### Images and Logos Used
 
-Back to [Table of Contents](#table-of-contents)
+No images as such have been used however the NSC logo being used is displaying via a href. 
 
----
----
-
-## Other information
-
----
+![NSC Logo](https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png)
 
 Back to [Table of Contents](#table-of-contents)
 
@@ -670,9 +664,24 @@ Back to [Table of Contents](#table-of-contents)
 
 ## Project Screenshots
 
+![Project Screenshot 1](static/screenshots/project_screenshot_1.png)
+![Project Screenshot 2](static/screenshots/project_screenshot_2.png)
+![Project Screenshot 3](static/screenshots/project_screenshot_3.png)
+![Project Screenshot 4](static/screenshots/project_screenshot_4.png)
+![Project Screenshot 5](static/screenshots/project_screenshot_5.png)
+![Project Screenshot 6](static/screenshots/project_screenshot_6.png)
+![Project Screenshot 7](static/screenshots/project_screenshot_7.png)
+![Project Screenshot 8](static/screenshots/project_screenshot_8.png)
+![Project Screenshot 9](static/screenshots/project_screenshot_9.png)
+![Project Screenshot 10](static/screenshots/project_screenshot_10.png)
+
 ---
 
 Back to [Table of Contents](#table-of-contents)
 
 ---
 ---
+
+Thank you for Reading! 
+
+This project was built by Charlie Storey.
