@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
     (function() {
@@ -25,7 +25,9 @@
         <!-- top navbar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo left"><img src="https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png" alt=""></a>
+                <a href="{{ url_for('home') }}" class="brand-logo left">
+                    <img src="https://www.norfolksnowsports.com/wp-content/uploads/elementor/thumbs/Norfolk-Snowsport-Club-Logo_RGB-osplk2w7cw07mrat9y3ev9ql8ubsotxz7l0vkturqg.png" alt="">
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -68,9 +70,8 @@
             {% endif %}
         </ul>
     </header>
-
+    <!-- flash messages -->
     <section class="flash-msg">
-        <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -83,16 +84,17 @@
             {% endif %}
         {% endwith %}
     </section>
-
+    <!-- templating logic -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
-
+    <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col s12 m6">
+                    <!-- contact info -->
                     <h5 class="white-text">Get In Touch</h5>
                     <ul>
                         <li>
@@ -112,6 +114,7 @@
                     </ul>
                 </div>
                 <div class="col s6 m3">
+                    <!-- address -->
                     <h5 class="white-text">Norfolk Snowsports Club</h5>
                     <ul>
                         <li>Whitlingham Lane</li>
@@ -124,6 +127,7 @@
                     <h5 class="white-text center-align">Follow Us</h5>
                     <ul class="center-align">
                         <li class="social-link">
+                            <!-- social links -->
                             <a href="https://www.instagram.com/norfolksnowsportsclub/" target="_blank" rel="noopener">
                                 <i class="fab fa-instagram"></i>
                                 <span class="sr-only">Instagram</span>
@@ -151,12 +155,9 @@
             </div>
         </div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/email.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
 </body>
 </html>
