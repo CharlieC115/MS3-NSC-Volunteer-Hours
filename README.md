@@ -99,6 +99,34 @@ The site admin will be NSC employees.
 
 I used [Balsamiq.com](https://balsamiq.com/) to create the wireframes.
 
+Please see below for all the wireframs:
+
+Small Screen Sizes:
+
+![Wireframe Home Page](static/screenshots/Small_Home_Page.png)
+![Wireframe Login Page](static/screenshots/Small_Login_Page.png)
+![Wireframe Register Page](static/screenshots/Small_Register_Page.png)
+![Wireframe Profile Page](static/screenshots/Small_Profile_Page.png)
+![Wireframe Edit Profile Page](static/screenshots/Small_Edit_Profile_Page.png)
+![Wireframe New Record Page](static/screenshots/Small_New_Record_Page.png)
+![Wireframe Edit Record Page](static/screenshots/Small_Edit_Record_Page.png)
+![Wireframe Site Manager Page](static/screenshots/Small_Site_Manager_Page.png)
+![Wireframe Activity Page](static/screenshots/Small_Activity_Page.png)
+![Wireframe Lessons Page](static/screenshots/Small_Lessons_Page.png)
+
+Larger Screen Sizes:
+
+![Wireframe Home Page](static/screenshots/Home_Page.png)
+![Wireframe Login Page](static/screenshots/Login_Page.png)
+![Wireframe Register Page](static/screenshots/Register_Page.png)
+![Wireframe Profile Page](static/screenshots/Profile_Page.png)
+![Wireframe Edit Profile Page](static/screenshots/Edit_Profile_Page.png)
+![Wireframe New Record Page](static/screenshots/New_Record_Page.png)
+![Wireframe Edit Record Page](static/screenshots/Edit_Record_Page.png)
+![Wireframe Site Manager Page](static/screenshots/Site_Manager_Page.png)
+![Wireframe Activity Page](static/screenshots/Activity_Page.png)
+![Wireframe Lessons Page](static/screenshots/Lessons_Page.png)
+
 ### Surface
 
 #### Colours
@@ -600,6 +628,8 @@ Back to [Table of Contents](#table-of-contents)
 ---
 
 This project was deployed on heroku. I used gitpod as a development environment where all the changes were committed to the GitHub repository for version control. Heroku then recieved this information to keep the app up to date and current.
+
+The project is deployed here: [https://nsc-volunteer-hours.herokuapp.com/](https://nsc-volunteer-hours.herokuapp.com/)
 
 To deploy I had to:
 
