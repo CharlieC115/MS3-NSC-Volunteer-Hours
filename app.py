@@ -35,6 +35,8 @@ def profile():
 @app.route('/edit_profile/<user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
     if request.method == 'POST':
+        # code to get all fields of the users collection minus
+        # username and password
         user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
 
         user['first_name'] = request.form.get('first_name')
@@ -125,12 +127,14 @@ def logout():
 
 @app.route('/lessons')
 def lessons():
+    # get the records from the lessons collection
     lessons = list(mongo.db.lessons.find().sort('datetime_millisec', 1))
     return render_template('lessons.html', lessons=lessons)
 
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    # functionality for search bar
     query = request.form.get('query')
     lessons = list(mongo.db.lessons.find(
         {'$text': {'$search': query}}).sort('datetime_millisec', 1))
@@ -141,10 +145,12 @@ def search():
 def new_record():
     if request.method == 'POST':
         lesson_hours = request.form.get('lesson_hours')
+        # check if switch is on or off and return yes or no
         lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
         lesson_expenses = 'Yes' if request.form.get(
             'lesson_expenses') else 'No'
 
+        # calculate expenses using hours
         if float(lesson_hours) < 1.5:
             expense_due = 7.2
         else:
@@ -152,22 +158,27 @@ def new_record():
 
         mileage = 5.0
 
+        # return value only if they want expenses
         if lesson_expenses == 'Yes':
             total_expense = float(expense_due)
         else:
             total_expense = 0.0
 
+        # return mileage only if they want mileage
         if lesson_mileage == 'Yes':
             total_mileage = mileage
         else:
             total_mileage = 0.0
 
+        # calculate the total expense payout
         total_due = total_expense + total_mileage
 
+        # create a full datetime
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
         full_date_time = date + ' ' + start_time
 
+        # convert to datetime into milliseconds so this can be put in order
         dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
         millisec = dateti.timestamp()
 
@@ -257,10 +268,12 @@ def new_record_admin():
 def edit_record(lesson_id):
     if request.method == 'POST':
         lesson_hours = request.form.get('lesson_hours')
+        # check if switch is on or off and return yes or no
         lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
         lesson_expenses = 'Yes' if request.form.get(
             'lesson_expenses') else 'No'
 
+        # calculate expenses using hours
         if float(lesson_hours) < 1.5:
             expense_due = 7.2
         else:
@@ -268,22 +281,27 @@ def edit_record(lesson_id):
 
         mileage = 5.0
 
+        # return value only if they want expenses
         if lesson_expenses == 'Yes':
             total_expense = float(expense_due)
         else:
             total_expense = 0.0
 
+        # return mileage only if they want mileage
         if lesson_mileage == 'Yes':
             total_mileage = mileage
         else:
             total_mileage = 0.0
 
+        # calculate the total expense payout
         total_due = total_expense + total_mileage
 
+        # create a full datetime
         date = request.form.get('lesson_date')
         start_time = request.form.get('lesson_start')
         full_date_time = date + ' ' + start_time
 
+        # convert to datetime into milliseconds so this can be put in order
         dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
         millisec = dateti.timestamp()
 
@@ -322,6 +340,7 @@ def manage_activities():
 
     hours = mongo.db.lessons.find({}, {'_id': 0, 'lesson_hours': 1})
 
+    # used to calculate total hours
     hours_total = 0
     for hour in hours:
         hour_num = float(hour['lesson_hours'])
@@ -329,6 +348,7 @@ def manage_activities():
 
     expenses = mongo.db.lessons.find({}, {'_id': 0, 'expense_due': 1})
 
+    # used to calculate total expenses
     expense_total = round(0, 2)
     for expense in expenses:
         expense_num = float(expense['expense_due'])
@@ -336,6 +356,7 @@ def manage_activities():
 
     total_expense = mongo.db.lessons.find({}, {'_id': 0, 'total_due': 1})
 
+    # used to calculate total mileage
     overall_expenses = round(0, 2)
     for t_expense in total_expense:
         overall_expense_num = float(t_expense['total_due'])
