@@ -586,6 +586,9 @@ Fixed issue where editing profile would remove username and password. Added tota
 Fixed issue where lesson header would scroll with table
 * Moved the header into its own row outside of the template for loop and class that is targeted for the styles overflow.
 
+Fixed issue where dropdown for activity wasn't showing correctly in lesson edit and how if a user edited a lesson it over wrote the original users username
+* Input activity.activity_name instead of activity.lesson_type in html. used insert on istead of update and dictionary to target indiviual fields in the edit lessons page.
+
 ### Performance Testing
 
 #### Performance
