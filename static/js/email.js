@@ -6,12 +6,12 @@ function sendMail(contactForm) {
             "question": contactForm.question.value
     })
     .then(function(response) {
-        console.log("SUCCESS", response)
-        alert('Thank you for Submit your question(s).\nWe will reply shortly.')
+        console.log("SUCCESS", response);
+        alert('Thank you for Submit your question(s).\nWe will reply shortly.');
     },
         function(error) {
-            console.log("FAILED", error)}
-        )
-    document.getElementById("contact-form").reset()
-    return false
+            console.log("FAILED", error);}
+        );
+    document.getElementById("contact-form").reset();
+    return false;
 }
