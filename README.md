@@ -535,11 +535,61 @@ All issues and bugs were found using google inspect and the responsive design to
 
 Below I have explained the issues and how they were resolved:
 
+Fixed mistake where I removed the ';' in the email javascript.
+* input the missing ';'
 
+Fixed issue where admin user could be picked as the record entry
+* Used templating to disable to username = to the admin username.
+
+Fixed issue where when website was clicked in footer it wouldn't load in a new tab.
+* Added the target blank attribute to ensure this loads in a new tab.
+ 
+Fixed issue where some form fields where not showing visable validation when the field was complete or not.
+* Added functionality to the script.js file and the validate tribute to the elements to fix this.
+
+Fixed issue where manage activity cards would come out of line when screen size was reduced
+* Added a consitant height to all the cards so the stay in the appropriate format.
+
+Fixed issue where manage activites was showing on a phone to anyone
+* Added the appropriate templating to the sidnav in base.html to hide this from all users bar admin.
+
+Fixed issue where editing profile would remove username and password. Added total column to lessons table
+* Called the key values indvidually instead of updating the whole dictionary. Didn't call the username or password field so these wouldn't be changed.
+
+Fixed issue where lesson header would scroll with table
+* Moved the header into its own row outside of the template for loop and class that is targeted for the styles overflow.
 
 ### Performance Testing
 
+#### Performance
+
+The sites performance has been optimized by reducing the amount on unnecessary content on the site. There is no image and the content is straight to the point.
+
+#### Accessability
+
+The accessabilty has been optimized by giving alt tags a value and having screen reader set for icon links.
+
+#### Best Practices
+
+Best practices has been optimized by having clear constitent indentaition throughout, lots of notes and double checking this through validators.
+
+#### SEO
+
+The SEO has been optimized by adding meta tags in particular the meta description and keeping all content relevant.
+
+![Desktop performance screenshot](static/screenshots/desktop_performance_screenshot.png)
+
+![Mobile performance screenshot](static/screenshots/mobile_performance_screenshot.png)
+
+
 ### Code Validation
+
+The code used for this site was validated using the following sites:
+
+* [W3C HTML Validator](https://validator.w3.org/#validate_by_input)
+* [W3c CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+* [JavaScript Validator](https://beautifytools.com/javascript-validator.php)
+* [Python PEP8 Validator](http://pep8online.com/checkresult)
 
 Back to [Table of Contents](#table-of-contents)
 
