@@ -360,6 +360,124 @@ Back to [Table of Contents](#table-of-contents)
 
 ### Functionality Testing
 
+I used google chrome developer tools throught this project to test the structure, styling and responsiveness of the site. I used the CLI and python3 to test some functions and I also used Python Tutor to test some code.
+
+#### Tested:
+
+#### Responsiveness
+
+Expected: the site was expected to respond to the screen size and have no visable white space or overlaps.
+
+Testing: This was tested by using google inspect to resize the page and a Honor P30 pro smart phone.
+
+Result: The site responds as expected for for small screen sizes and up. Some small fixes had to be made to achieve this.
+
+Fix: Media query for small screens so the content takes up the full width of the app.
+
+#### Navbar
+
+Expected: Navbar to adjust to the screen size and all links to work.
+
+Testing: This was tested by using google inspect to resize the page and a Honor P30 pro smart phone.
+
+Result: Navbar links all work and the logo also acts as a link to the home page. The navbar collapses into a mobile friendly hamburger menu when a smaller screen size is reached. Some small fixes had to be made to achieve this.
+
+Fix: Classes had to be added to fix the hamburger menu useability. The side menu wasn't acepting any user actions.
+
+#### Colour Contrast
+
+Expected: Also background and foreground colours are expected to pass a contrast test in google developer tools.
+
+Testing: Google developer tools was used to test the contrast. Elements, text and backgounds were hovered over to show the contrast rating.
+
+Result: All elements pass this test. The primary and secondary colours were all checked in advance for contrast to speed the process of checking this up.
+
+#### Buttons and links
+
+Expected: It's expected that also buttons link to the appropriate pages.
+
+Testing: This has been tested on both windows and android. I have gone trough and clicked everything button and link.
+
+Result: All buttons and links worked as expected and directed me to the appropriate pages. Small fix needed.
+
+Fix: The website link in the footer was opening the site over this app so a blank target was added to rectify this.
+
+#### Contact Form
+
+Expected: It was expected that the completed form would auto populate an email and send this to the site owner when submitted.
+
+Testing: Filled out the contact form and submitted.
+
+Result: This email was sent and recieved as expected. Small change made.
+
+Fix: Code was added to ensure an alert would show so users knew the form was sent otherwise without this it was very difficult to tell.
+
+#### Profiles and Editing
+
+Expected: Expected the users personal information to show in the profile and editing this to correctly send the changes to the databases.
+
+Testing: Loaded the profiles page and checked the information match that of the information in the database. Edited the information and checked the returned new values were those of which were edited.
+
+Result: Profile and edit profile page both display the correct information and behave as expected.
+
+#### Search Bar
+
+Expected: It's expected that the search bar will find user and/or lesson type values and return these for the user to see.
+
+Testing: Input different values to check the correct records with these values were returned.
+
+Result: The search function returned the correct values and behaved as expected.
+
+#### Lessons Table
+
+Expected: This table is expected to show to records input by the user and allow the user to edit or delete, with confirmation, the record.
+
+Testing: Records were edited and deleted to check these functions work.
+
+Result: This table, contents and buttons displayed as expected. Minor fix needed to allow for a delete confirmation.
+
+Fix: Delete confirmation alert was added to ensure no records are accidently removed.
+
+#### Adding Records
+
+Expected: It is expected that all input data is saved to the dataebase and displayed in the lessons page.
+
+Testing: Lots of records with different values were added then check in the table. The databases raw data was also check to see if the submitted information was present.
+
+Result: All records were correctly submitted and the data was within the database collection. Page and function responds as expected.
+
+#### Adding and editing activities
+
+Expected: This was expected to add new activities to the activities displayed in the drop down list in new records and on the cards on the site manager page. Also any edits made the appropriate changes to the cards, drop down list and database.
+
+Testing: Added new activities and checked they were present on the site manager page and the new record drop down field for lesson_type. The database collection was checked against the site manager activies to check the were all loading properly.
+
+Result: Adding activies behaved as expected.
+
+#### Statistics
+
+Expected: the statistics section on the site manager page is expected to keep a running total of hours, expenses and mileage.
+
+Testing: New records were added and removed to check the values changed. The total was manually calculated from the lessons table and the answers checked against the statistics section.
+
+Result: All values were accurate and the statistic behave as expected.
+
+#### User profiles and edit
+
+Expected: expected to see all user profiles displayed and when the edit button is clicked, to be diverted to an edit page for that users profile.
+
+Testing: checked the user profile values displayed against those in the databases users collection. Clicked on the edit buttons to check the correct page was loaded.
+
+Result: This behaved as expected.
+
+#### Log Out
+
+Expected: It's expected that the user is logged out.
+
+Testing: Clicked the log out button from many different pages.
+
+Result: The log out navbar option behaves as expected and logs the session user out.
+
 ### Compatibility Testing
 
 ### User Story Testing
