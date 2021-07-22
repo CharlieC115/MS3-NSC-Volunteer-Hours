@@ -641,8 +641,16 @@ Throughout learning with code institute I have researched and learnt using the f
     * Throughout this project I have referred back to lots of different modules to refresh myself on good practices.
 * [W3Schools](https://www.w3schools.com/)
     * I have used this site throughout the course when looking for ideas or potential stylings to code.
+* [Materialize](https://materializecss.com/)
+    * I used materialize for its grid system and styling. This was a good starting point for my project.
+* [Norfolk Snowsports Club](https://www.norfolksnowsports.com/)
+    * This is the main club website for customers and to keep things consitent I used the brand colors and fonts to keep a constent brand image across customer and staff sites.
+* [You Tube](https://www.youtube.com/)
+    * At times throughout the Python and Data Centric Development section of this diploma I have whatch tutorials and videos explain functions and best practices for javascript, python, jquery and databases.
 
 ### Code
+
+I have refactored a lot of the css and some of the python. Both could still have further refactoring in the future. the HTML, CSS, JavaScript and python all have lots of notes so when this code is revisted in the future it's easy to manipulate and understand.
 
 ### Images Used
 
