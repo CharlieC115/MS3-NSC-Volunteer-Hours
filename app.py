@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, flash, redirect, request, session, url_for
+from flask import (Flask, render_template, flash,
+                   redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -90,22 +91,22 @@ def login():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {'username': request.form.get('username').lower()})
-        
+
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user['password'], request.form.get('password')):
-                    session['user'] = request.form.get('username').lower()
-                    flash('Welcome, {}'.format(
-                        request.form.get('username')))
-                    return redirect(url_for(
-                        'profile', username=session['user']))
+              existing_user['password'], request.form.get('password')):
+                session['user'] = request.form.get('username').lower()
+                flash('Welcome, {}'.format(
+                    request.form.get('username')))
+                return redirect(url_for(
+                    'profile', username=session['user']))
 
             else:
                 # invalid password match
                 flash('Incorrect Username and/or Password')
                 return redirect(url_for('login'))
-            
+
         else:
             # username doesn't exist
             flash('Incorrect Username and/or Password')
@@ -131,7 +132,8 @@ def lessons():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.form.get('query')
-    lessons = list(mongo.db.lessons.find({'$text': {'$search': query}}).sort('datetime_millisec', 1))
+    lessons = list(mongo.db.lessons.find(
+        {'$text': {'$search': query}}).sort('datetime_millisec', 1))
     return render_template('lessons.html', lessons=lessons)
 
 
@@ -140,7 +142,8 @@ def new_record():
     if request.method == 'POST':
         lesson_hours = request.form.get('lesson_hours')
         lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
-        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+        lesson_expenses = 'Yes' if request.form.get(
+            'lesson_expenses') else 'No'
 
         if float(lesson_hours) < 1.5:
             expense_due = 7.2
@@ -182,14 +185,14 @@ def new_record():
             'total_due': total_due
         }
 
-
         mongo.db.lessons.insert_one(record)
         flash('Record successfully Added')
         return redirect(url_for('lessons'))
 
     users = mongo.db.users.find()
     activities = mongo.db.activities.find().sort('activity_name', 1)
-    return render_template('new_record.html', activities=activities, users=users)
+    return render_template(
+        'new_record.html', activities=activities, users=users)
 
 
 @app.route('/new_record_admin', methods=['GET', 'POST'])
@@ -197,7 +200,8 @@ def new_record_admin():
     if request.method == 'POST':
         lesson_hours = request.form.get('lesson_hours')
         lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
-        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+        lesson_expenses = 'Yes' if request.form.get(
+            'lesson_expenses') else 'No'
 
         if float(lesson_hours) < 1.5:
             expense_due = 7.2
@@ -239,14 +243,14 @@ def new_record_admin():
             'total_due': total_due
         }
 
-
         mongo.db.lessons.insert_one(record)
         flash('Record successfully Added')
         return redirect(url_for('lessons'))
 
     users = mongo.db.users.find()
     activities = mongo.db.activities.find().sort('activity_name', 1)
-    return render_template('new_record_admin.html', activities=activities, users=users)
+    return render_template(
+        'new_record_admin.html', activities=activities, users=users)
 
 
 @app.route('/edit_record/<lesson_id>', methods=['GET', 'POST'])
@@ -254,7 +258,8 @@ def edit_record(lesson_id):
     if request.method == 'POST':
         lesson_hours = request.form.get('lesson_hours')
         lesson_mileage = 'Yes' if request.form.get('lesson_mileage') else 'No'
-        lesson_expenses = 'Yes' if request.form.get('lesson_expenses') else 'No'
+        lesson_expenses = 'Yes' if request.form.get(
+            'lesson_expenses') else 'No'
 
         if float(lesson_hours) < 1.5:
             expense_due = 7.2
@@ -301,7 +306,8 @@ def edit_record(lesson_id):
 
     lesson = mongo.db.lessons.find_one({'_id': ObjectId(lesson_id)})
     activities = mongo.db.activities.find().sort('activity_name', 1)
-    return render_template('edit_record.html', lesson=lesson, activities=activities)
+    return render_template(
+        'edit_record.html', lesson=lesson, activities=activities)
 
 
 @app.route('/delete_record/<lesson_id>')
@@ -315,7 +321,7 @@ def delete_record(lesson_id):
 def manage_activities():
 
     hours = mongo.db.lessons.find({}, {'_id': 0, 'lesson_hours': 1})
-    
+
     hours_total = 0
     for hour in hours:
         hour_num = float(hour['lesson_hours'])
@@ -334,12 +340,15 @@ def manage_activities():
     for t_expense in total_expense:
         overall_expense_num = float(t_expense['total_due'])
         overall_expenses = overall_expenses + overall_expense_num
-    
+
     total_mileage = round((overall_expenses - expense_total), 2)
 
     users = mongo.db.users.find()
     activities = list(mongo.db.activities.find().sort('activity_name', 1))
-    return render_template('manage_activities.html', activities=activities, users=users, hours_total=hours_total, expense_total=expense_total, total_mileage=total_mileage)
+    return render_template(
+        'manage_activities.html', activities=activities, users=users,
+        hours_total=hours_total, expense_total=expense_total,
+        total_mileage=total_mileage)
 
 
 @app.route('/new_activity', methods=['GET', 'POST'])
