@@ -480,9 +480,62 @@ Result: The log out navbar option behaves as expected and logs the session user 
 
 ### Compatibility Testing
 
+This site was tested across the following devices and browsers:
+
+#### Devices
+
+* Hp Laptop using windows 10 home
+* Honor 20 pro mobile phone
+
+All devices tested fuctioned as expected.
+
+#### Browsers
+
+* Google Chrome
+* Mozila Fox
+* Microsoft Edge
+
+All browsers tested fuctioned as expected.
+
 ### User Story Testing
 
+#### As an instructor I would like to:
+
+* Easily add lessons I have done to the NSC Volunteer Hours Site.
+    * This can be achieve through the new record page.
+* View all my lessons volunteered.
+    * All records can be view on the lessons page.
+* Edit and delete any records I have incorrectly added.
+    * Edit and delete buttons are present for every record in the lessons page.
+* See an overview of the hours I have volunteered and the expenses due.
+    * Expenses are calculated and sent back with the table for instructors to view.
+* Manage my account information.
+    * Profile can easily be edited from the edit profile page accessed throung the profile page.
+
+#### As an Admin User I would like to:
+
+* View all submitted hours.
+    * These records can all be viewed in the lessons page.
+* Edit and delete any records that are incorrect.
+    * These records can all be edited or deleted from the lessons table.
+* See an overview of all hours and expenses.
+    * This can be seen from the lessons table on the lessons page also there is and overall running total in teh statistics section of the site manager page.
+* Easily search for a user or a lesson type/category.
+    * Search bar available at the top of the lessons page to allow users and admin to search for a lesson type or user entered lesson.
+* Edit user information.
+    * User profiles can easily be edited from the edit profile page accessed throung the profile page or the user profiles table on the site manager page.
+* Add and Edit new and existing lesson types/categories.
+    * New avtivities/lesson types can be easily added in the site manager section.
+* Input lesson information on an instructors behalf.
+    * Admin can select a user when submitting a new record so entries can be added by staff on an instructors behalf.
+
 ### Issues and bugs
+
+All issues and bugs were found using google inspect and the responsive design tools, python tutor, CLI and console warnings.
+
+Below I have explained the issues and how they were resolved:
+
+
 
 ### Performance Testing
 
