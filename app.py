@@ -305,21 +305,20 @@ def edit_record(lesson_id):
         dateti = datetime.strptime(full_date_time, '%d.%m.%Y %H:%M')
         millisec = dateti.timestamp()
 
-        record = {
-            'lesson_date': date,
-            'lesson_start': start_time,
-            'lesson_finish': request.form.get('lesson_finish'),
-            'lesson_hours': lesson_hours,
-            'lesson_type': request.form.get('activity_name'),
-            'lesson_mileage': lesson_mileage,
-            'lesson_expenses': lesson_expenses,
-            'entry_by': session['user'],
-            'expense_due': expense_due,
-            'datetime_millisec': millisec,
-            'total_due': total_due
-        }
+        lesson_e = mongo.db.lessons.find_one({'_id': ObjectId(lesson_id)})
 
-        mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, record)
+        lesson_e['lesson_date'] = date
+        lesson_e['lesson_start'] = start_time
+        lesson_e['lesson_finish'] = request.form.get('lesson_finish')
+        lesson_e['lesson_hours'] = lesson_hours
+        lesson_e['lesson_type'] = request.form.get('activity_name')
+        lesson_e['lesson_mileage'] = lesson_mileage
+        lesson_e['lesson_expenses'] = lesson_expenses
+        lesson_e['expense_due'] = expense_due
+        lesson_e['datetime_millisec'] = millisec
+        lesson_e['total_due'] = total_due
+
+        mongo.db.lessons.update({'_id': ObjectId(lesson_id)}, lesson_e)
         flash('Record successfully Updated')
 
     lesson = mongo.db.lessons.find_one({'_id': ObjectId(lesson_id)})

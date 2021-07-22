@@ -54,7 +54,7 @@
                             <select id="activity_name" name="activity_name" class="validate" required>
                                 <option value="" disabled>Choose your option</option>
                                 {% for activity in activities %}
-                                    {% if activity.lesson_type == lesson.lesson_type %}
+                                    {% if activity.activity_name == lesson.lesson_type %}
                                         <option value="{{ activity.activity_name }}" selected>{{ activity.activity_name }}</option>
                                     {% else %}
                                         <option value="{{ activity.activity_name }}">{{ activity.activity_name }}</option>
