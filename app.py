@@ -351,7 +351,7 @@ def manage_activities():
     expense_total = round(0, 2)
     for expense in expenses:
         expense_num = float(expense['expense_due'])
-        expense_total = expense_total + expense_num
+        expense_total = round((expense_total + expense_num), 2)
 
     total_expense = mongo.db.lessons.find({}, {'_id': 0, 'total_due': 1})
 
