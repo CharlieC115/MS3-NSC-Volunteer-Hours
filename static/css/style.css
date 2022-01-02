@@ -401,7 +401,7 @@ th {
 
 @media only screen and (max-width: 403px) {
     html {
-        width: 150vw;
+        width: 100vw;
     }
 
 }
